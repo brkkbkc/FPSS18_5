@@ -1,0 +1,33 @@
+Last login: Thu Jun 21 12:46:26 on ttys000
+You have new mail.
+dynip-129-217-114-195:~ burakkabakci$ gnuplot
+
+	G N U P L O T
+	Version 4.6 patchlevel 5    last modified February 2014
+	Build System: Darwin x86_64
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2014
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type set to 'aqua'
+gnuplot> set xrange [0:5]
+gnuplot> set yrange [400:1100]
+gnuplot> set xlabel 'Messungen'
+gnuplot> set ylabel 'Bandbreiteprodukte'
+gnuplot> plot '/Users/burakkabakci/Desktop/plotfehlerbalken.txt' using 1:2:3 with yerrorbars
+gnuplot> f(x)=880.38
+gnuplot> g(x)=826.81
+gnuplot> plot '/Users/burakkabakci/Desktop/plotfehlerbalken.txt' using 1:2:3 with yerrorbars title 'Messungen 1-4', /
+                                                                                                                    ^
+         invalid expression 
+
+gnuplot> plot '/Users/burakkabakci/Desktop/plotfehlerbalken.txt' using 1:2:3 with yerrorbars title 'Messungen 1-4', \
+>f(x) title 'Obere Gränze'
+gnuplot> plot '/Users/burakkabakci/Desktop/plotfehlerbalken.txt' using 1:2:3 with yerrorbars title 'Messungen 1-4', \
+>f(x) title 'Obere Gränze', \
+>g(x) title 'Untere Gränze'
+gnuplot> 
