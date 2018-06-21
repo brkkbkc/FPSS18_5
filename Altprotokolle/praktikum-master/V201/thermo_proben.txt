@@ -1,0 +1,17 @@
+# Daten des verwendeten Wassers
+# Volumen in m^3   spez. Wärmekap. in J/(kg K)    Dichte in kg/m^3
+
+6e-4   4180   1.0e3
+
+# U_w in mV   U_k in mV   U_m in mV
+
+# Blei
+0.672   3.937   0.760
+0.938   3.948   1.067
+1.169   3.944   1.188
+
+# Kupfer
+0.750   3.960   0.938
+
+# Zinn
+1.084   4.003   1.152

@@ -1,0 +1,119 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Theorie}
+
+Den Vorgang, der sich abspielt, wenn man ein System aus seinem
+Ausgangszustand auslenkt, nennt man, sofern er sich ohne Oszillationen
+vollzieht, Relaxation.
+
+\subsection{Auf- und Entladevorgang am Kondensator}
+Zunächst wird der Entladevorgang betrachtet. Aus der
+Abbildung~\ref{fig:rc-glied} kann man mithilfe der \name{Kirchhoff}schen
+Regeln diese Differentialgleichung ableiten:
+%
+\begin{equation}
+  \label{eq:rc-dgl}
+  RC\cdot Q'(t) + Q(t) = 0 \text{.}
+\end{equation}
+%
+Die Lösung zum Anfangswertproblem $Q(0) = Q_0$ ist gegeben mit
+%
+\begin{equation}
+  \label{eq:sol-rc-dgl}
+  Q(t) = Q_0 \exp(-t/RC) \text{.}
+\end{equation}
+%
+Hier kann man nun das Relaxationsverhalten beim Entladen erkennen,
+nämlich daß der Kondensator nach unendlich langer Zeit wieder entladen
+ist: $\lim_{t\to\infty} Q(t) = 0$.
+
+Zum Aufladen wird eine Spannungsquelle benötigt, so daß sich die
+Abbildung~\ref{fig:rcu-glied} ergibt. Die zugehörige
+Differentialgleichung lautet:
+%
+\begin{equation}
+  \label{eq:rcu-dgl}
+  RC\cdot Q'(t) + Q(t) = U \text{.}
+\end{equation}
+%
+Die Lösung zum Anfangswertproblem $Q(0) = 0$ führt auf die Funktion $Q$
+mit:
+%
+\begin{equation}
+  \label{eq:sol-rcu-dgl}
+  Q(t) = UC \Big(1-\exp(-t/RC)\Big) \text{.}
+\end{equation}
+%
+Auch bei dieser Lösung wird nach unendlich langer Zeit der gewünschte
+Endzustand erreicht: $\lim_{t\to\infty} Q(t) = UC$. 
+
+Die Zahl $RC$ heißt Zeitkonstante und gibt an, wie schnell die Funktion
+gegen ihren entsprechenden Grenzwert, d.\,h. gegen ihren Endzustand
+konvergiert.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\textwidth]{rc-glied}
+  \caption{Schaltung eines RC-Gliedes ohne äußere Spannungsquelle}
+  \label{fig:rc-glied}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\textwidth]{rcu-glied}
+  \caption{Schaltung eines RC-Gliedes mit äußerer Spannungsquelle}
+  \label{fig:rcu-glied}
+\end{figure}
+
+\subsection{Relaxationsverhalten bei äußerer Anregung}
+
+Die Spannungsquelle in Abbildung~\ref{fig:rcu-glied} ist bisher konstant
+gewesen. Dies soll sich nun ändern. Statt dessen wird ein
+Wechselspannung der Kreisfrequenz $\omega$ angelegt:
+%
+\begin{equation}
+  \label{eq:u-ac}
+  U(t) = U_0\cos(\omega t) \text{.}
+\end{equation}
+%
+Dies sorgt nun dafür, daß das RC-Glied zumindest bei niedrigen
+Frequenzen dem aufgeprägten Signal folgt, daß also die Spannung $U_c$ am
+Kondensator zu jedem Zeitzunkt ungefähr gleich der Spannung $U(t)$ der
+Spannungsquelle ist. Werden aber die Frequenzen erhöht, so hinkt der
+Kondensator mit seiner Auf- und Entladung der Spannungsquelle immer
+deutlicher hinterher. Dies führt zu einer Phasenverschiebung $\varphi$
+zwischen beiden Spannungen.
+
+Es wird nun die Abhängigkeit der Phase und Amplitude der
+Kondensatorspannung von der Frequenz untersucht. Dabei ergeben sich die
+folgenden Formeln:
+%
+\begin{equation}
+  \label{eq:phase-frequenz}
+  \varphi(\omega) = \arctan(-\omega RC)
+\end{equation}
+%
+\begin{equation}
+  \label{eq:amplitude-frequenz}
+  A(\omega) = \frac{U_0}{\sqrt{1+(\omega RC)^2}}
+\end{equation}
+
+
+\subsection{Funktion des RC-Gliedes als Integrator}
+
+Unter der Voraussetzung, daß $\omega\ll 1/RC$ ist, funktioniert das
+RC-Glied als Integrator. Dies ergibt sich aus dem Zusammenhang:
+%
+\begin{equation}
+  \label{eq:dgl-umformung}
+  U(t) = U_R(t) + U_C(t) = R I(t) + U_c(t) = RC U_C'(t) + U_C(t)
+\end{equation}
+%
+Mit der Voraussetzung folgt, daß $|U_C| \ll |U_R|$ und $|U_C| \ll |U|$
+und daraus kann \eqref{eq:dgl-umformung} so geschrieben werden:
+%
+\begin{equation}
+  U(t) = RC U_C'(t) \implies U_C(t) = \frac{1}{RC}\int_0^t U(x) \d x
+\end{equation}

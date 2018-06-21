@@ -1,0 +1,167 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+ \subsection{Kontrast eines Interferometers}
+Der Kontrast rechnet sich aus der Gleichung (\ref{kontrast}). Dafür werden die Werte aus der Folgenden Tabelle betrachtet.
+
+  \begin{table}
+ \centering
+ \begin{tabular}{c|c|c|c}
+
+ $\phi$ in Grad 	&	$U_{Max}/ \si{\volt}$&	$U_{Min}/ \si{\volt}$	&	$K$	\\
+\hline
+90	&	-4,1	&	-5	&	-0,10	\\
+80	&	-2,6	&	-4,98	&	-0,31	\\
+70	&	-1,53	&	-4,72	&	-0,51	\\
+60	&	-0,87	&	-4,03	&	-0,64	\\
+50	&	-0,656	&	-3,41	&	-0,68	\\
+45	&	-0,593	&	-3,25	&	-0,69	\\
+40	&	-0,656	&	-2,97	&	-0,64	\\
+30	&	-0,781	&	-2,87	&	-0,57	\\
+20	&	-1,219	&	-3,06	&	-0,43	\\
+10	&	-2,188	&	-3,56	&	-0,24	\\
+0	&	-3,344	&	-4,09	&	-0,10	\\
+
+ \end{tabular}
+ \caption{Gemessene Spannung und Kontrast in Abhängigkeit vom Polarisationswinkel}
+ \end{table}
+
+ Der Kontrast wird in Abhängigkeit des Polarisationswinkels in Abbildung (\ref{fig:plot1}) aufgetragen.
+ Dabei wird eine Ausgleichsfunktion die durch
+
+  \begin{equation}
+    K = a \cdot \mid \sin(b(\phi-c)) \mid +d
+    \end{equation}
+
+    gegeben ist, an die Messwerte angepasst. Die Ausgleichsfunktion besitzt die Parameter
+
+
+\begin{center}
+$a= 0,62 \pm 0,02 $,
+\end{center}
+
+\begin{center}
+$b= 1,98 \pm 0,02 $,
+\end{center}
+
+\begin{center}
+$c=  0,02 \pm 0,01 $
+\end{center}
+\begin{center}
+$d= 0,07 \pm 0,01 $.
+\end{center}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_V64_1.pdf}
+  \caption{Kontrast in Abhängigkeit des Polarisationswinkels mit nicht linearer Ausgleichsfunktion}
+  \label{fig:plot1}
+\end{figure}
+Der Abbildung ist zu entnehmen, dass
+
+ \subsection{Brechungsindex von Glas}
+ Der Polarisationswinkel wird auf maximalen Kontrast gestellt, der Brechungsindex wird mithilfe von Gleichung (\ref{glas}) bestimmt.
+Es gelten für die Berechnung des Brechungsindex der Glasplatten folgende Konstanten:
+
+ \begin{align*}
+ %\phi_0 &= 10° \\
+  \lambda &= 632,99\, \text{nm} \\
+  T &= 1 \, \text{mm} \; \text{\cite{Anleitung}}
+ \end{align*}
+
+
+
+  \begin{table}
+ \centering
+ \begin{tabular}{c|c|c|c|c}
+
+Winkel $\theta$ in Grad	&	Messung 1	&	Messung 2	& Messung 3 & Messung 4 \\
+
+ \hline
+2	&	7	&	7	& 	8	&	7 \\
+4	&	13	&	13	& 	14	&	14 \\
+6	&	20	&	20	& 	22	& 	20 \\
+8	&	28	&	28	&	27 	& 	27  \\
+10	&	36	&	34	&	34 	& 	34 \\
+   \end{tabular}
+ \caption{Messwerte zur Bestimmung des Brechungsindex von Glas}
+ \end{table}
+
+In folgender Tabelle ist der berechnete Brechungsindex zu sehen. Dabei wird jewails die maximale Countzahl bzw. maximale Zahl der Interferenzmaxima $M$ benutzt, das hei"st, es wird der gr"o"ste Winkel betrachtet.
+%Nun wird f"ur alle Messungen der Brechungsindex $n$ von Luft bei Atmospherendruck nach Formel (\ref{gas}) berechnet, das hei"st f"ur die letzte Countanzahl/Interferenzmaximazahl $M$, also die gesamte Interferenzmaximazahl bis zum Wiedererreichen des Atmospherendrucks.
+
+ \begin{table}
+ \centering
+ \begin{tabular}{c|c|c|c}
+
+ Messung	&	Counts/$M$	&	n	& Fehler \\
+
+ \hline
+1	&	36	&	1,56	& 0,03 \\
+2	&	34	&	1,55	& 0,01\\
+3	&	34	&	1,55	& 0,01 \\
+4	&	34	&	1,55	& 0,01 \\
+\hline
+
+ \multicolumn{2}{c}{$\overline{n}$} & \multicolumn{2}{c} {1,56 $\pm$ 0,02} \\
+\hline
+ \end{tabular}
+ \caption{Der Brechungsindex für den Maximalwinkel $\theta=\SI{10}{\degree}$ aller vier Messreihen mit der Gleichung (\ref{glas}) berechnet.}
+ \end{table}
+Der Durchschnittswert des Brechungsindexes zeigt eine gute "Ubereinstimmung mit dem Literaturwert von Kronglas: $n_{Glas,Lit}=1,52$ (\cite{glas}).
+
+\subsection{Brechungsindex von Luft}
+
+In Tabelle (4) sind die gemessenen Counts von Luft in Abh"angigkeit des Druckes notiert.
+
+
+
+ \begin{table}
+ \centering
+ \begin{tabular}{c|c|c|c}
+\label{test}
+Druck in $\si{\milli \bar}$	&	Messung 1	& 	Messung 2	&  Messung 3 \\
+	\hline
+	& \multicolumn{3}{c}{Counts} \\
+100	&	4	&	4	&	5 \\
+200	&	9	&	9	&	9 \\
+300	&	13	&	13	& 	13 \\
+400	&	17	&	17	&	17 \\
+500	&	21	&	21	&	21 \\
+600 	&	25	&	25	&	25 \\
+700	&	29	&	29	& 	30 \\
+800	&	34	&	34	&	34 \\
+900	&	38	&	38	&	38 \\
+1000 &	42	&	42	&	42 \\
+
+ \end{tabular}
+ \label{test}
+  \caption{Messwerte zur Bestimmung des Brechungsindex von Luft}
+ \end{table}
+In der Tabelle (5) sind die berechneten Werte für den Brechungsindex von Luft einzusehen.
+Es wird f"ur alle Messungen der Brechungsindex $n$ von Luft bei Atmospherendruck nach Formel (\ref{gas}) berechnet, das hei"st f"ur die letzte Countanzahl/Interferenzmaximazahl $M$, also die gesamte Interferenzmaximazahl bis zum Wiedererreichen des Atmospherendrucks.
+Die L"ange $L$ des optischen Elementes ist dabei:
+\begin{equation}
+  L = \SI{100}{\milli \meter}
+\end{equation}
+
+ \begin{table}
+ \label{test2}
+ \centering
+ \begin{tabular}{c|c|c}
+\label{test2}
+ Messung	&	Counts	&	n	 \\
+
+ \hline
+1	&	42	&	1,000266 \\
+2	&	42	&	1,000266 \\
+3	&	42	&	1,000266  \\
+\hline
+
+ \multicolumn{2}{c}{$\overline{n}$} &1,000266 $\pm$ 0,0 \\
+\hline
+ \end{tabular}
+ \caption{Der Brechungsindex für alle drei Messreihen nach Gleichung (\ref{gas})}
+ \end{table}
+
+Der Literaturwert von Luft (bei $\SI{1013}{\milli \bar}$) liegt bei $n_{Luft, Lit}=1,000292$ (\cite{luft}) und somit liegt die relative Abweichung bei $0,00001 \%$.

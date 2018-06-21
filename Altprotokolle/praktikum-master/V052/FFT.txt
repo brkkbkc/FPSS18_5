@@ -1,0 +1,7 @@
+#FTT-Amplituden
+#Ungedaempft/mV	Gedaempft/mV
+6.005	6.053
+4.13	3.027
+2.744	1.871
+2.069	1.365
+1.656	1.088

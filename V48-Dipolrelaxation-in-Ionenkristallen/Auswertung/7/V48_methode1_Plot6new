@@ -1,0 +1,140 @@
+Last login: Tue May 15 01:05:48 on ttys000
+You have new mail.
+Buraks-MBP:~ burakkabakci$ gnuplot
+
+	G N U P L O T
+	Version 4.6 patchlevel 5    last modified February 2014
+	Build System: Darwin x86_64
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2014
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type set to 'aqua'
+gnuplot> set xlabel '1/T'
+gnuplot> set ylabel 'ln(i(T)/i_0)'
+gnuplot> 
+gnuplot> f(x)=a*x+b
+gnuplot> plot '/Users/burakkabakci/Desktop/Done/Methode_1/V48_zweite_methode1/V48_14_meth1_1dT_lniT.txt' with points title 'Messdaten_2'
+gnuplot> 
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/Done/Methode_1/V48_zweite_methode1/V48_14_meth2_fit.txt' via a,b
+
+
+ Iteration 0
+ WSSR        : 65.5373           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.707113
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+/
+
+ Iteration 1
+ WSSR        : 9.46557           delta(WSSR)/WSSR   : -5.92375
+ delta(WSSR) : -56.0717          limit for stopping : 1e-05
+ lambda	  : 0.0707113
+
+resultant parameter values
+
+a               = 1.00722
+b               = 3.1616
+/
+
+ Iteration 2
+ WSSR        : 9.35913           delta(WSSR)/WSSR   : -0.0113724
+ delta(WSSR) : -0.106436         limit for stopping : 1e-05
+ lambda	  : 0.00707113
+
+resultant parameter values
+
+a               = 0.852956
+b               = 3.26044
+/
+
+ Iteration 3
+ WSSR        : 9.33526           delta(WSSR)/WSSR   : -0.00255742
+ delta(WSSR) : -0.0238742        limit for stopping : 1e-05
+ lambda	  : 0.000707113
+
+resultant parameter values
+
+a               = -14.593
+b               = 3.32312
+/
+
+ Iteration 4
+ WSSR        : 7.34678           delta(WSSR)/WSSR   : -0.27066
+ delta(WSSR) : -1.98848          limit for stopping : 1e-05
+ lambda	  : 7.07113e-05
+
+resultant parameter values
+
+a               = -1380.82
+b               = 8.86362
+/
+
+ Iteration 5
+ WSSR        : 0.234403          delta(WSSR)/WSSR   : -30.3425
+ delta(WSSR) : -7.11237          limit for stopping : 1e-05
+ lambda	  : 7.07113e-06
+
+resultant parameter values
+
+a               = -11100.7
+b               = 48.2811
+/
+
+ Iteration 6
+ WSSR        : 0.19822           delta(WSSR)/WSSR   : -0.182536
+ delta(WSSR) : -0.0361823        limit for stopping : 1e-05
+ lambda	  : 7.07113e-07
+
+resultant parameter values
+
+a               = -11844.6
+b               = 51.2979
+/
+
+ Iteration 7
+ WSSR        : 0.19822           delta(WSSR)/WSSR   : -1.06921e-07
+ delta(WSSR) : -2.1194e-08       limit for stopping : 1e-05
+ lambda	  : 7.07113e-08
+
+resultant parameter values
+
+a               = -11845.2
+b               = 51.3002
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 0.19822
+rel. change during last iteration : -1.06921e-07
+
+degrees of freedom    (FIT_NDF)                        : 9
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.148406
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0220245
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -11845.2         +/- 580.8        (4.904%)
+b               = 51.3002          +/- 2.356        (4.592%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+gnuplot> 
+gnuplot> plot '/Users/burakkabakci/Desktop/Done/Methode_1/V48_zweite_methode1/V48_14_meth1_1dT_lniT.txt' with points title 'Messdaten_2', \
+>f(x) title 'Ausgleichsgerade'
+gnuplot> 
+gnuplot> set yrange [-4:5]
+gnuplot> plot '/Users/burakkabakci/Desktop/Done/Methode_1/V48_zweite_methode1/V48_14_meth1_1dT_lniT.txt' with points title 'Messdaten_2', \
+>f(x) title 'Ausgleichsgerade'
+gnuplot> 

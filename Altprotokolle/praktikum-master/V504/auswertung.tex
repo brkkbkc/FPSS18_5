@@ -1,0 +1,232 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+
+\subsection{Bestimmung der Sättigungsstromstärke aus den Kennlinien}
+
+In den \crefrange{fig:kennlinie-2_1A}{fig:kennlinie-2_6A} auf den
+\cpagerefrange{fig:kennlinie-2_1A}{fig:kennlinie-2_6A} sind die
+aufgenommenen Kennlinien zu sehen. Die horizontale Linie kennzeichnet
+den Sättigungsstrom. In \cref{tab:saettigung} sind die abgelesenen Werte
+mit den zugehörigen Heizspannungen und -strömen gelistet.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.7\textwidth]{kennlinie-2_1A}
+  \caption{Die Abbildung zeigt den Strom-Spannungsverlauf bei einem
+    Heizstrom von \SI{2.1}{\ampere}. Die gestrichelte Linie kennzeichnet
+  die Sättigungsstromstärke. Raumladungsgebiet und Sättigungsbereich
+  sind nicht sehr deutlich voneinander zu unterscheiden.}
+  \label{fig:kennlinie-2_1A}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.7\textwidth]{kennlinie-2_2A}
+  \caption{Die Abbildung zeigt den Strom-Spannungsverlauf bei einem
+    Heizstrom von \SI{2.2}{\ampere}. Die gestrichelte Linie kennzeichnet
+    die Sättigungsstromstärke. Raumladungsgebiet und Sättigungsbereich
+    sind nicht sehr deutlich voneinander zu unterscheiden.}
+  \label{fig:kennlinie-2_2A}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.7\textwidth]{kennlinie-2_3A}
+  \caption{Die Abbildung zeigt den Strom-Spannungsverlauf bei einem
+    Heizstrom von \SI{2.3}{\ampere}. Die gestrichelte Linie kennzeichnet
+    die Sättigungsstromstärke. Raumladungsgebiet und Sättigungsbereich
+    sind nicht sehr deutlich voneinander zu unterscheiden.}
+  \label{fig:kennlinie-2_3A}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.7\textwidth]{kennlinie-2_4A}
+  \caption{Die Abbildung zeigt den Strom-Spannungsverlauf bei einem
+    Heizstrom von \SI{2.4}{\ampere}. Die gestrichelte Linie kennzeichnet
+    die Sättigungsstromstärke. Raumladungsgebiet und Sättigungsbereich
+    sind nicht sehr deutlich voneinander zu unterscheiden.}
+  \label{fig:kennlinie-2_4A}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.7\textwidth]{kennlinie-2_6A}
+  \caption{Die Abbildung zeigt den Strom-Spannungsverlauf bei einem
+    Heizstrom von \SI{2.6}{\ampere}. Die gestrichelte Linie kennzeichnet
+    die Sättigungsstromstärke. Die Sättigungsstromdichte wird vermutlich
+    nicht erreicht. Das Raumladungsgebiet ist nicht vom Sättigungsgebiet
+    zu unterscheiden}
+  \label{fig:kennlinie-2_6A}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSS}
+    \toprule
+    {$U$/V} & {$I$/A} & {$I_S$/A} \\
+    \midrule
+    4.0000e+00 & 2.1000e+00 & 0.171 \\
+    4.5000e+00 & 2.2000e+00 & 0.400 \\
+    5.0000e+00 & 2.3000e+00 & 0.797 \\
+    5.0000e+00 & 2.4000e+00 & 1.537 \\
+    6.0000e+00 & 2.6000e+00 & 3.020 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Aus den \crefrange{fig:kennlinie-2_1A}{fig:kennlinie-2_6A}
+    abgelesene Sättigungsstromstärken. Es ist zu erkennen, daß der
+    Sättigungsstrom sehr stark mit der Temperatur ansteigt.}
+  \label{tab:saettigung}
+\end{table}
+
+\subsection{Der Gültigkeitsbereich des
+  \name{Langmuir}-\name{Schottky}-Raumladungsgesetzes}
+
+Auf \cref{fig:raumladung} ist der Strom-Spannungsverlauf in ein
+Koordinatensystem eingetragen, dessen beide Achsen logarithmiert
+sind. Das Raumladungsgebiet ist nur schwer zu erkennen. Ab dem
+12. Messwert in etwa scheinen die Punkte von einer gedachten Geraden
+abzuweichen, daher wird für die ersten 12 Punkte eine Ausgleichsrechnung
+durchgeführt. Um eine lineare Ausgleichsrechnung durchzuführen, wird eine
+Substitution durchgeführt.
+%
+\begin{equation*}
+  y = \log I = \frac{3}{2} \log U + \log A = m x + b,
+\end{equation*}
+%
+mit einer Konstanten $A$. Durch diese Ausgleichsrechnung kann überprüft
+werden, wie genau der tatsächliche Exponent mit dem erwarteten
+übereinstimmt. Für die Ausgleichsrechnung wird die Funktion
+\texttt{scipy.stats.linregress} aus der \texttt{scipy}-Bibliothek in der
+Version 0.12 verwendet. Die Ergebnisse lauten:
+%
+\begin{align*}
+  m &= \num{1.206(16)} &
+  b &= \num{-5.455(4)}\\
+  \frac{|m - \frac{3}{2}|}{\frac{3}{2}} &= \SI{19.6}{\percent}
+\end{align*}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{raumladung}
+  \caption{Strom gegen Spannung im Anlaufgebiet halblogarithmisch
+    aufgetragen.}
+  \label{fig:raumladung}
+\end{figure}
+
+\subsection{Bestimmung der Kathodentemperatur aus dem Anlaufgebiet}
+
+Bei der maximal möglichen Heizleistung kann durch Messung des
+Anlaufgebiets die Kathodentemperatur bestimmt werden. Dazu trägt man die
+Messpunkte von Strom und Spannung in ein Koordinatensystem ein, dessen
+Ordinate logarithmiert ist (\cref{fig:anlaufgebiet}). Dann führt man
+eine lineare Ausgleichsrechnung durch. Aus der Steigung $m$ erhält man
+nach Gl.~(\eqref{eq:anlaufstromdichte}) die Temperatur
+%
+\begin{equation*}
+  T = \frac{e}{m k}
+\end{equation*}
+Da die Steigung fehlerbehaftet ist, wird eine \name{Gauß}sche
+Fehlerfortpflanzung durchgeführt:
+%
+\begin{equation*}
+  \Delta T = \frac{e}{m^2k} \Delta m
+\end{equation*}
+%
+Das Ergebnis für die Kathodentemperatur lautet dann:
+%
+\begin{equation*}
+  T = \SI{2630(89)}{\kelvin}.
+\end{equation*}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{anlaufgebiet}
+  \caption{Strom gegen Spannung im Anlaufgebiet halblogarithmisch
+    aufgetragen.}
+  \label{fig:anlaufgebiet}
+\end{figure}
+
+\subsection{Kathodentemperatur aus einer Leistungsbilanz der Apparatur}
+
+Über eine Leistungsbilanz der verwendeten Geräte der Apparatur kann die
+Temperatur der Kathode ebenfalls bestimmt werden. Die zugeführte
+Leistung $P_\text{zu} = UI$ wird über Wärmestrahlung und Wärmeleitung
+von der Kathode abgegeben. Die Wärmeleitungsleistung wird auf
+\SI{1}{\watt} geschätzt. Für die Wärmestrahlung gilt nach dem
+\name{Stefan}-\name{Boltzmann}-Gesetz
+%
+\begin{equation*}
+  P_\text{str} = f \eta \sigma T^4, 
+\end{equation*}
+%
+wobei $f = \SI{0.35}{\squared\centi\metre}$ die emittierende
+Kathodenoberfläche, $\eta = \num{0.28}$ der Emissionsgrad der Oberfläche
+und $\sigma = \SI{5.7e-12}%
+{\watt\per\centi\metre\squared\per\kelvin\tothe 4}$ ist die
+\name{Stefan}-\name{Boltzmann}-Konstante. Es ergibt sich also der
+folgende Term für die Kathodentemperatur:
+%
+\begin{equation}
+  T = \sqrt[4]{\frac{UI - \SI{1}{\watt}}{f\eta\sigma}}
+  \label{eq:leistungsbilanz}
+\end{equation}
+%
+In \cref{tab:leistungsbilanz} stehen die Heizspannungen und -ströme der
+fünf aufgenommenen Kennlinien mit ihren ermittelten
+Kathodentemperaturen.
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSS}
+    \toprule
+    {$U$/V} & {$I$/A} & {$T$/K} \\
+    \midrule
+    4.0000e+00 & 2.1000e+00 & 1910 \\
+    4.5000e+00 & 2.2000e+00 & 2000 \\
+    5.0000e+00 & 2.3000e+00 & 2084 \\
+    5.0000e+00 & 2.4000e+00 & 2109 \\
+    6.0000e+00 & 2.6000e+00 & 2264 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Die Heizspannungen und -ströme der Kennlinien mit den
+    zugehörigen nach \eqref{eq:leistungsbilanz} bestimmten
+    Kathodentemperaturen.}
+  \label{tab:leistungsbilanz}
+\end{table}
+
+\subsection{Bestimmung der Austrittsarbeit des Kathodenmaterials}
+
+Die Gl.~\eqref{eq:richard} wird nach $\phi$ umgestellt und dann werden für
+die zuvor bestimmten Temperaturen und Sättigungsströme eingesetzt. Die
+Ergebnisse können in \cref{tab:austrittsarbeit} betrachtet werden. Für
+den Wert der Austrittsarbeit ergibt sich:
+%
+\begin{equation*}
+  \phi = \SI{4.30(05)}{\electronvolt}
+\end{equation*}
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSS}
+    \toprule
+    { $U$/V }  & { $I$/A }  & {$\phi$/eV}\\
+    \midrule
+    1.7100e-01 & 1.9103e+03 & 4.1871e+00 \\
+    4.0000e-01 & 2.0005e+03 & 4.2543e+00 \\
+    7.9700e-01 & 2.0849e+03 & 4.3248e+00 \\
+    1.5370e+00 & 2.1093e+03 & 4.2602e+00 \\
+    3.0200e+00 & 2.2640e+03 & 4.4685e+00 \\
+    \midrule
+    \multicolumn{2}{c}{Mittelwert} & 4.30 \\
+    \multicolumn{2}{c}{Standardabweichung} & 0.05 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Hier finden sich die aus den Sättigungsströmen und
+    Temperaturen bestimmten Austrittsarbeiten des Kathodenmaterial. Für
+    die Querschnittsfläche, durch den der Strom tritt, wird $f/2$ angenommen.}
+  \label{tab:austrittsarbeit}
+\end{table}

@@ -1,0 +1,207 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+
+\subsection{Magnetfeldmessung}
+Nach der Justage der Apparatur wird die Komponente des Magnetfeldes,
+welche parallel zum Lichtstrahl verläuft, vermessen.  Dies geschieht mit
+einer Hallsonde.  Die örtliche Abhängigkeit des Magnetfeldes ist in
+\cref{fig:magnetfeld} zu sehen. Die dazugehörigen Messwerte befinden 
+sich in Tabelle~\ref{tab:magnetmess}. 
+Die maximale magnetische Flussdichte
+beträgt $B_\text{max} = \SI{448}{mT}$.
+
+\begin{table}[h]
+  \centering
+  \sisetup {
+    per-mode = fraction
+  }
+  \begin{tabular}{SSSSSSSS}
+    \toprule
+    {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
+    {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
+    {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
+    {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}\\
+    \cmidrule(rl){1-2}
+    \cmidrule(rl){3-4}
+    \cmidrule(rl){5-6}
+    \cmidrule(rl){7-8}
+    0&0&95&3&121&446&135&60\\
+    10&1&100&12&122&444&140&12\\
+    20&1&105&58&123&439&145&3\\
+    30&0&110&267&124&432&150&1\\
+    40&1&115&429&125&422&160&0\\
+    50&1&116&437&126&409&170&0\\
+    60&0&117&442&127&390&180&0\\
+    70&0&118&446&128&364&190&1\\
+    80&0&119&447&129&328&200&1\\
+    90&1&120&448&130&281& & \\
+    \bottomrule
+  \end{tabular}
+  \caption{Die mit einer Hallsonde aufgenommenen 
+   Werte der magnetischen Flussdichte, welche durch den 
+   in diesem Versuch verwendeten Elektromagneten bei einem 
+   Feldstrom von \SI{10.48}{\ampere} erzeugt wird in Abhängigkeit 
+   der Position der Messsonde.}
+  \label{tab:magnetmess}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{abbildungen/magnetfeld.pdf}
+  \caption{Die grapische Darstellung der Ergebnisse der
+    Magnetfeldmessung.  Das Maximum ist deutlich zu erkennen.  Außerdem
+    beschränkt sich das Magnetfeld auf die Zone, in der sich die Probe
+    befindet.}
+  \label{fig:magnetfeld}
+\end{figure}
+\FloatBarrier
+\subsection{Die effektiven Masse der Leitungselektronen in GaAs}
+
+In \cref{fig:faraday-rot} sind die Faraday-Rotationswinkel der 
+drei vermessenen Proben gegen die Wellenlänge aufgetragen. 
+Diese Winkel werden aus den erhaltenen 
+Messdaten gemäß \cref{eq:drehwinkel} berechnet. Die Messwerte und 
+die errechneten Faraday-Rotationswinkel sind in 
+\cref{tab:faraday-rotation} eingetragen.
+
+Zur Berechnung der effektiven Masse der freien Leitungselektronen
+bestimmen wir die auf die Probenlänge normierte Differenz $\Delta\theta$ der
+Faraday-Rotationen von jeweils einer dotierten und der hochreinen Probe.
+Gemäß Formel \eqref{eq:winkelfrei} kann ein lineares Regressionmodell
+für die Meßdaten $y = (y_i) = (\Delta\theta_i)$ und $x = (x_i) =
+(\lambda_i^2)$ zugrundegelegt werden:
+%
+\begin{equation}
+  \label{eq:linregress}
+  y_i = \beta_0 x_i + \beta_1.
+\end{equation}
+Die Ausgleichsrechnung wird von der Bibliothek \texttt{scipy.stats}
+übernommen, die in der Version 0.10 verwendet wird und eine Funktion
+\texttt{scipy.stats.linregress} enthält, die die Parameter $\beta_0$ und
+$\beta_1$ und die Standardabweichung $s$ berechnet.  Gemäß den Formeln
+%
+\begin{align}
+  \label{eq:stat-formeln}
+  s_{\beta_0} &= \frac{s}{\sqrt{n}} \sqrt{1 + \frac{n\bar{x}^2}
+    {\operatorname{var}(x)}}\\
+  s_{\beta_1} &= \frac{s}{\sqrt{n \operatorname{var}(x)}}
+\end{align}
+%
+werden dann die Standardabweichungen der Parameter geschätzt.  Das
+Ergebnis der Rechnung ist in \cref{tab:linregress} numerisch und in
+\cref{fig:linregress} graphisch gegeben.  Aus Formel
+\eqref{eq:winkelfrei} wird abgelesen, dass für den Zusammenhang zwischen
+effektiver Masse und dem Parameter $\beta_0$ gilt:
+%
+\begin{equation}
+m^{*} = \sqrt{\frac{e_0^3}{8\pi^2\varepsilon_0c^3\beta_0} \frac{NB}{n}}
+\label{eq:effekt}
+\end{equation}
+%
+Der Brechungsindex $n = \num{3.455}$ von GaAs ist \cite{filmetrics}
+entnommen. \Cref{tab:linregress} zeigt die Ergebnisse, die aus dieser
+Formel erhalten werden.  Im nächsten Abschnitt werden diese Ergebnisse
+kurz diskutiert.
+
+\begin{table}\centering
+  \begin{tabular}{SSSSSSSSSS}
+    \toprule
+    &
+    \multicolumn{3}{c}{hochreine Probe} &
+    \multicolumn{3}{c}{schwach dotierte Probe} &
+    \multicolumn{3}{c}{stark dotierte Probe}
+    \\
+    \cmidrule(rl){2-4}
+    \cmidrule(rl){5-7}
+    \cmidrule(rl){8-10}
+    {$\lambda/\si{\micro\meter}$} &
+    {$\theta_1/\si{\degree}$} &
+    {$\theta_2/\si{\degree}$} &
+    {$\theta/\si{\degree}$} &
+    {$\theta_1/\si{\degree}$} &
+    {$\theta_2/\si{\degree}$} &
+    {$\theta/\si{\degree}$} &
+    {$\theta_1/\si{\degree}$} &
+    {$\theta_2/\si{\degree}$} &
+    {$\theta/\si{\degree}$}
+    \\
+    \midrule
+    1.06 & 315. & 337.7 & 11.3 & 75. &  64.5 &  5.5 & 320.7 & 333. & 6.2\\
+    1.29 & 335. & 320. & 7.5 & 64.7 & 72.6 & 3.9 & 333. & 323. & 5.\\
+    1.45 & 320.3 & 333. & 6.3 & 74. & 62.4 & 5.8 & 321.3 &  330.7 & 4.7\\
+    1.72 & 332.6 & 324. & 4.3 & 61.6 & 71.5 & 5.0 & 333. & 324. & 4.5\\
+    1.96 & 330.8 & 337.3 & 3.3 & 336. & 329. & 3.5 & 328. & 339. & 5.5\\
+    2.16 & 336. & 329.6 & 3.2 & 59. & 66. & 3.5 & 340. & 327. & 6.5\\
+    2.34 & 355.8 & 358.5 & 1.4 & 43. & 35. & 4. & 350.5 & 369. & 9.3\\
+    2.51 & 13. & 22. & 4.5 & 19.3 & 11.4 & 4.0 & 21. & 13. & 4. \\
+    2.65 & 53.4 & 58.7 & 2.6 & 345. & 335.7 & 4.7 & 331.6 & 347. & 7.7\\ 
+    \bottomrule
+   \end{tabular}
+   \caption{Hier sind die gemessenen Winkel $\theta_1$ und $\theta_2$
+     eingetragen.  Gemäß \cref{eq:drehwinkel} sind die Winkel $\theta$
+     ausgerechnet worden.  Die schwach dotierte Probe hat eine
+     Ladungsträgerdichte $N=\SI{1.2e18}{cm^{-3}}$ und ist \SI{1.296}{mm}
+       lang, die stark dotierte Probe hat $n=\SI{2.8e18}{cm^{-3}}$ und
+       ist \SI{1.36}{mm} lang.}
+  \label{tab:faraday-rotation}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{abbildungen/faraday-rotation}
+  \caption{Hier ist die Faraday-Rotation der drei verschiedenen Proben
+    gegen die Wellenlänge aufgetragen.  Das oberste Diagramm zeigt die
+    Faraday-Rotation der hochreinen Probe, das mittlere das der 
+    schwach dotierten Probe und im untersten ist die Faraday-Rotation 
+    der stark dotierten Probe zu sehen.}
+  \label{fig:faraday-rot}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{abbildungen/effektive_masse}
+  \caption{Hier sind die Differenzen der Faraday-Rotationeswinkel von 
+    dotierter und hochreiner Probe im Bogenmaß gegen das
+    Wellenlängenquadrat aufgetragen.  Nach Formel \eqref{eq:winkelfrei}
+    ist ein linearer Zusammenhang zu vermuten.  Die eingezeichneten
+    Geraden zeigen die Ergebnisse einer linearen Regressionsrechnung.}
+  \label{fig:linregress}
+\end{figure}
+
+\begin{table}
+  \centering
+  \sisetup{
+    table-figures-integer  = 1,
+    table-figures-decimal  = 1,
+    table-figures-uncertainty = 1,
+    table-number-alignment = center,
+    retain-unity-mantissa  = false
+  }
+  \begin{tabular}{lSSSS[table-figures-decimal=2]}
+    \toprule
+    {Dotierung} &
+    {$\beta_0/(\SI{1e12}{\per\meter})$}&
+    {$\beta_1/(\SI{1e-2}{\per\meter})$} &
+    {$m^*/(\SI{1e-31}{kg})$} &
+    {$m^*/m_\text{e}$}
+    \\
+    \midrule
+    schwach& 1.8(13) & 3.2 & 1.4(5) & 0.15(5)\\
+    stark  & 8.3(30) & 3.0 & 1.0(2) & 0.11(2)\\
+    \midrule
+    Mittelwerte & & & 1.2(3) & 0.13(4)\\
+    \bottomrule
+  \end{tabular}
+  \caption{Hier sind die Ergebnisse der linearen Ausgleichsrechnung und
+    die Berechnung der effektiven Masse dargestellt. Die Fehler der 
+    effektiven Massen sind nach einer 
+    Fehlerfortpflanzung von Formel~\eqref{eq:effekt} entstanden.
+    Die Fehler für den Parameter
+    $\beta_1$ sind nicht angegeben, da er mehrerer Größenordnungen über
+    dem Parameter selbst liegt, in die Berechnung der effektiven 
+    Masse aber nicht eingeht.}
+  \label{tab:linregress}
+\end{table}

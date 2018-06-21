@@ -1,0 +1,4 @@
+mit literaturverzeichnes von biber (wenn nicht automatisch mit make):
+1) lualatex main.tex
+2) biber main.bcf
+3) lualatex main.tex

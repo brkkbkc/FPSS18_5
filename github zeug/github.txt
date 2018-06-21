@@ -1,0 +1,31 @@
+
+name: VersorgungsAuge  pass: unipass
+
+e-mail: ismael.abunada@udo.edu
+
+
+1. runterladen
+git pull
+
+2. hochladen
+git add --all oder git add .
+git commit -m'nachricht'
+git push
+
+wenn ich was HOCHLADEN will (IMMER diese Reihenfolge)
+1)git add --all  
+2)git commit -m"nachricht"
+3)git pull  (WENN er merge error anzeigt NICHT pushen, erst beheben)
+4)git push
+
+
+MERGE-error:
+1) gitk oder git status gucken wo die merge errors sind
+2) NUR in diesen dateien was aendern, undzwar von den doppelten merge texten 
+   den richtingen auswaehlen und den falschen loeschen und alle pfeile und zahlen/buchstaben
+   die dazu kamen
+3)git add --all (NICHT commit)
+4)git rebase --continue
+5)git satus um zu "uberpruefen ob fehler wech sind
+6)git pull
+7)git push

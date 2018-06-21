@@ -1,0 +1,175 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+
+ \subsection{Präsentation der Messwerte}
+
+
+
+Es werden in diesem Versuch zwei Messungen mit unterschiedlicher Heizrate
+$b$ durchgeführt. Zunächst müssen zu den jeweiligen Messreihen die Heizraten bestimmt werden.
+Mit Hilfe des Programms Gnuplot werden mittels linearer Ausgleichsrechnung Funktionen der Form
+
+\begin{align}
+f(x)=m\cdot x+b
+\label{ausgleichsfunktion1}
+\end{align}
+
+für die Messdaten bestimmt. Die Heizraten werden mit dem Index 1 für die erste Messreihe und 2 für die zweite Messreihe gekennzeichnet.
+
+\begin{center}
+$m_1= 212,836 \pm 0,3264$, $b_1=1,83274 \pm 0,008731$
+\end{center}
+
+\begin{center}
+$m_2= 214,308 \pm0,1201 $, $b_2= 1,44388 \pm 0,002575$
+\end{center}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_0.pdf}
+  \caption{Messwerte und Ausgleichsgeraden für die Heizraten der beiden Messungen}
+  \label{fig:plot0}
+\end{figure}
+
+Im nächsten Schritt wird die Temperatur in Kelvin gegen den Strom in Picoampere aufgetragen. Dabei wird eine Exponentialfunktion die durch
+\begin{align}
+f(x)=exp(a\cdot x)+b
+\label{exponentialfunktion1}
+\end{align}
+ gegeben ist, an die Messwerte angepasst, um die Messwerte von dem Untergrund zu bereinigen. Die Ausgleichsexponentialfunktionen besitzten die Parameter
+
+ \begin{center}
+$a_1=0,016 \pm 2,7 \cdot 10^{-5}$, $b_1=-26,56 \pm 0,63$
+\end{center}
+
+\begin{center}
+$a_2=0,015 \pm 3,5 \cdot 10^{-5}$, $b_2=-23,41 \pm 0,65$
+\end{center}
+
+
+  \begin{figure}
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_1.pdf}
+  \caption{Daten der ersten Messreihe sowie eine Ausgleichsfunktion mit exponentiellem Verlauf als Anpassung an den Untergrund}
+  \label{fig:plot1}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_2.pdf}
+  \caption{Daten der zweiten Messreihe sowie eine Ausgleichsfunktion mit exponentiellem Verlauf als Anpassung an den Untergrund}
+  \label{fig:plot2}
+\end{figure}
+
+\newpage
+
+Zuletzt werden die Messdaten vom Untergrund bereinigt, indem die Ausgleichsfuntionen von den Messwerten abgezogen werden.
+Dies ist in den Abbildungen 7 und 8 dargestellt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_3.pdf}
+  \caption{Daten der ersten Messreihe nach dem Abzug des Untergrunds}
+  \label{fig:plot3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_4.pdf}
+  \caption{Daten der zweiten Messreihe nach dem Abzug des Untergrunds}
+  \label{fig:plot4}
+\end{figure}
+
+\newpage
+\subsection{Ermittlung der Aktivierungsenergie $W$ aus der Depolarisationsstromdichte $j(T)$ (Methode 1)}
+
+Um die Aktivierungsenergie aus der Depolarisationsenergie berechnen zu können muss zuerst der Logarithmus von j(T) bestimmt und gegen den Kehrwert der Temperatur aufgetragen werden. Anschließend wird im linearen Bereich, also in einem Bereich
+$T$ zwischen \SIrange{238,65}{250,25}{\kelvin} für die erste Messreihe und zwischen \SIrange{239,25}{254,25}{\kelvin} für die zweite Messreihe eine Ausgleichsgerade nach (\ref{methode1}) an die Daten angepasst. Die Parameter der Ausgleichsgeraden sind:
+
+ \begin{center}
+$m_1=-12791,1 \pm 598,7 $, $c_1=55,5 \pm 2,4$
+\end{center}
+
+\begin{center}
+$m_2=-11845,2 \pm 580,8$, $c_2=51,3 \pm 2,5$
+\end{center}
+
+
+\begin{figure} [H]
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_5.pdf}
+  \caption{Daten der ersten Messreihe mit $ln(i(T))$ gegen den Kehrwert der Temperatur aufgetragen}
+  \label{fig:plot5}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_6.pdf}
+  \caption{Daten der zweiten Messreihe mit $ln(i(T))$ gegen den Kehrwert der Temperatur aufgetragen}
+  \label{fig:plot6}
+\end{figure}
+
+Die Aktivierungsenergie $W$ wird aus der Steigung der Ausgleichsgeraden mittels (\ref{methode1}) berechnet und ergibt sich zu:
+
+ \begin{center}
+$W_1=\SI{1,102}{\electronvolt}$,
+\end{center}
+
+ \begin{center}
+$W_2=\SI{1,020}{\electronvolt}$.
+\end{center}
+
+ \subsection{Ermittlung Aktivierungsenergie $W$ aus der Polarisation $P$ der Probe (Methode 2)}
+
+ Um die Aktivierungsenergie $W$ mit größerer Genauigkeit  zu ermitteln, betrachtet man die Polarisation $P$ der Kristallprobe. Hier wird der y-Wert nach der Formel (\ref{methode2}) bestimmt und gegen den Kehrwert der Temperatur aufgetragen. Es wird eine lineare Ausgleichsrechnung durchgeführt und über die Steigung $W$ bestimmt.
+
+ \begin{figure}[H]
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_7.pdf}
+  \caption{Daten der ersten Messreihe mit y gegen den Kehrwert der Temperatur aufgetragen}
+  \label{fig:plot7}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=8cm]{plots/Plot_8.pdf}
+  \caption{Daten der zweiten Messreihe mit y gegen den Kehrwert der Temperatur aufgetragen}
+  \label{fig:plot8}
+\end{figure}
+
+ \begin{center}
+$m_1=10093,2 \pm 410,2 $, $c_1=-33,84 \pm 1,5$
+\end{center}
+
+\begin{center}
+$m_2=13409,7 \pm 677,4$, $c_2=-46,47 \pm 2,5$
+\end{center}
+
+Die Aktivierungsenergie wird aus der Steigung der Augleichsgeraden berechnet:
+
+\begin{center}
+$W_1=\SI{0,870}{\electronvolt}$,
+\end{center}
+
+\begin{center}
+$W_2=\SI{1,156}{\electronvolt}$.
+\end{center}
+
+
+
+\subsection{\texorpdfstring{Bestimmung der charakteristischen Relaxationszeit $\tau_0$}{Bestimmung der charakteristischen Relaxationszeit Tau-0}}
+  Die charakteristische Relaxationszeit $\tau_0$ wird mittels Formel (\ref{tau_0}) der Theorie berechnet.
+  Die Temperatur, bei der ein lokales Maximum der Depolarisationsstromst"arke $i(T)$ vorliegt, ist $T_{max,1}=\SI{258,55}{\kelvin}$ f"ur die Heizrate $b_1$ und $T_{max,2} = \SI{256,85}{\kelvin}$ f"ur $b_2$.\\
+  \\\textbf{Methode 1 :}
+
+    \begin{align}
+      \tau_{0,1}&=\SI{9,33e-22}{\second}\\
+      \tau_{0,2}&=\SI{3,62e-20}{\second}
+    \end{align}
+  \textbf{Methode 2 :}
+
+    \begin{align}
+      \tau_{0,1}&=\SI{4,02e-17}{\second}\\
+      \tau_{0,2}&=\SI{7,24e-23}{\second}
+    \end{align}

@@ -1,0 +1,379 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+
+Aus den gewonnenen Daten, die nachfolgend vorgestellt werden, kann man
+den Elastizitätsmodul der untersuchten Metalle und Legierungen
+errechnen. Um eine lineare Regression\footnote{benutzt wurde hierfür die
+  \texttt{ipython}-Umgebung mit der \texttt{numpy}-Bibliothek in der
+  Version 1.6.2} anwenden zu können, stellt man die Zusammenhänge
+\eqref{eq:durchbiegung-einseitig} und \eqref{eq:durchbiegung-beidseitig}
+so dar:
+%
+\begin{align}
+  \label{eq:lineare-durchbiegung-einseitig}
+  D(x) &= f(Lx^2-\frac{x^3}{3}) & f(u) &:= \frac{F}{2EI}u
+\end{align}
+Dies ist für die einseitige Aufhängung des Stabes. Für die beidseitige
+Aufhängung ergibt sich:
+\begin{align}
+  \label{eq:lineare-durchbiegung-beidseitig}
+  D(x) &= \begin{cases}
+    g(3L^2x-4x^3) & 0\le x\le \frac{L}{2}\\
+    g(4x^3-12Lx^2 + 9L^2x - L^3) & \frac{L}{2}\le x\le L
+  \end{cases}
+  & g(u) &:= \frac{F}{48EI}u
+\end{align}
+%
+Hier können nun die Größen $A_g = F/(48EI)$ und $A_f = F/(2EI)$ bestimmt
+werden. Umstellen von der beiden Größen nach $E$ liefert:
+\begin{align}
+  \label{eq:e-modul}
+  E &= \frac{F}{2A_fI} & E =& \frac{F}{48A_gI}
+\end{align}
+Da diese fehlerbehaftet sind, wird eine \name{Gauß}-Fehlerfortpflanzung
+durchgeführt:
+%
+\begin{equation}
+  \label{eq:gaussfehler-f}
+  \Delta E = \sqrt{\left(\frac{\partial E}{\partial A_f}
+      \cdot\Delta A_f\right)^2}
+  = \frac{F\cdot\Delta A_f}{2A_f^2I}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:gaussfehler-g}
+  \Delta E = \sqrt{\left(\frac{\partial E}{\partial A_g}\cdot\Delta
+      A_g\right)^2}
+  = \frac{F\cdot\Delta A_g}{48A^2_gI}
+\end{equation}
+
+Zur Bestimmung des Fehlers, der beim Messen des Durchmessers gemacht
+wird, wird die Formel für die Standardabweichung benutzt:
+
+\begin{equation}
+  \label{eq:durchmesser-fehler}
+  \sqrt{\frac{1}{n-1} \sum_{i=1}^n (d_i - \bar{d})^2}
+\end{equation}
+
+Die Flächenträgheitsmomente werden wie folgt berechnet. Für den
+Stahlstab mit kreisförmigem Querschnitt $Q = \{(r\cos\phi, r\sin\phi) :
+0\le r\le \frac{d}{2}, 0\le\phi\le2\pi\}$ gilt:
+\[
+I = \int_Q y^2\:\d(x, y)
+\]
+Durch Anwendung der Transformation $T\colon M\to Q, (r, \phi) \mapsto
+(r\cos\phi, r\sin\phi)$ mit $M = \{(r,\phi) : 0\le r\le d/2,
+0\le\phi\le2\pi\}$ ergibt sich:
+\[
+I = \int_Q y^2\:\d(x, y) = \int_M r^3\sin^2\phi\:\d(r, \phi) =
+\int_{r=0}^\frac{d}{2} r^3 \int_{\phi=0}^{2\pi} \sin^2\phi\:\d\phi\,\d r
+= \frac{d^4\pi}{64}
+\]
+
+Das Flächenträgheitsmoment für die beiden Stäbe mit quadratischem
+Querschnitt $Q = \{(x, y) : 0\le x\le d, 0\le y\le d\}$ (Aluminium und
+Messing) ergibt sich so:
+\[
+\int_Q y^2\:\d(x, y) = \int_{y=0}^d\int_{x=0}^d y^2\:\d x\,\d y =
+d\int_0^d y^2\:\d y = \frac{d^4}{3}
+\]
+
+\subsection{Bestimmung des Elastizitätsmoduls von Stahl}
+
+Die gemessenen Durchbiegung in Abhängigkeit vom Ort können in der
+Tabelle~\ref{tab:stahl} nachgesehen werden. Es wurden immer die
+Durchbiegungen $D_v(x)$ ohne Gewicht und die Durchbiegungen $D_n(x)$ mit
+Gewicht bestimmt. Die eingespannte Länge ist $L=\SI{49.5}{\centi\metre}$
+und als Gewicht haben wir die Masse $m=\SI{1680.9}{\gram}$
+verwendet. Gemäß Formel~\eqref{eq:echte_durchbiegung} errechnet sich die
+effektive Durchbiegung~$D(x)$, die Grundlage für weitere Berechnungen
+ist.
+
+Die Stichprobe zur Bestimmung des Durchmessers $d$ findet man in
+Tabelle~\ref{tab:stahl-durchmesser}. Nach der Bestimmung des
+arithmetischen Mittels und der Standardabweichung nach
+Formel~\eqref{eq:durchmesser-fehler} ergibt sich für den Durchmesser:
+%
+\begin{equation}
+  d = \SI{9.985(3)}{\milli\meter}
+\end{equation}
+%
+Abbildung~\ref{fig:stahl} zeigt eine Darstellung der Meßwerte und der
+Regressionsgerade. Die roten Punkte wurden für die Regression
+herangezogen. Daraus erhält man diese Gleichung:
+%
+\begin{equation}
+  D(x) = \SI{0.016}{\per\cubic\metre} 
+  \left(Lx^2 - \frac{x^3}{3}\right)  - \SI{0.001}{\metre}
+\end{equation}
+%
+Der Fehler für die Steigung ergibt sich aus der Regression zu:
+%
+\begin{equation}
+  \Delta A_f = \SI{0.0008}{\per\cubic\metre}
+\end{equation}
+%
+Mithilfe der Steigung $A_f$ und Formel~\eqref{eq:e-modul} und nach der
+\name{Gauss}-Fehlerfortpflanzung in Formel~\eqref{eq:gaussfehler-f} erhält man
+folgenden Wert für $E$:
+%
+\begin{equation}
+  \label{eq:wert-stahl-emodul}
+  E = \SI{1078(53)}{\kilo\newton\per\milli\metre\squared}
+\end{equation}
+%
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{SSS}
+    \toprule
+    {$x/\si{\centi\metre}$} &
+    {$D_v/\si{\micro\metre}$} &
+    {$D_n/\si{\micro\metre}$} \\
+    \midrule
+    2.7 &    550 &    510 \\
+    5.0 &    600 &    470 \\
+    9.0 &    600 &    220 \\
+    13.0 &    590 &    185 \\
+    17.0 &    540 &    136 \\
+    21.0 &    530 &    280 \\
+    25.0 &    460 &    312 \\
+    27.0 &    430 &    377 \\
+    32.0 &    310 &    475 \\
+    35.0 &    200 &    490 \\
+    38.0 &    170 &    544 \\
+    40.0 &    198 &    600 \\
+    42.0 &    198 &    647 \\
+    44.0 &    195 &    700 \\
+    46.0 &    180 &    749 \\
+    48.0 &    177 &    795 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte zur Durchbiegung des Stahlstabes}
+  \label{tab:stahl}
+\end{table}
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{S}
+    \toprule
+    {$d/\si{\milli\metre}$}\\
+    \midrule
+    9.986 \\
+    9.989 \\
+    9.983 \\
+    9.988 \\
+    9.986 \\
+    9.982 \\
+    9.982 \\
+    9.985 \\
+    9.985 \\
+    9.981 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Durchmesser des Stahlstabes}
+  \label{tab:stahl-durchmesser}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{stahl-einseitig-kreisfoermig.pdf}
+  \caption{Meßwerte mit linearer Regression für den Stahlstab}
+  \label{fig:stahl}
+\end{figure}
+
+\subsection{Bestimmung des Elastizitätsmoduls von Aluminium}
+
+Die gemessenen Durchbiegungen für den Aluminiumstab ist in
+Tabelle~\ref{tab:aluminium} zu finden. Die Werte zum Durchmesser in
+Tabelle~\ref{tab:aluminium-durchmesser}. Die eingespannte Länge beträgt
+$L=\SI{49.6}{\centi\metre}$ und als Gewicht haben wir die Masse
+$m=\SI{5416}{\gram}$ verwendet. Der Mittelwert des Durchmessers und
+seine Standardabweichung nach Formel~\eqref{eq:durchmesser-fehler} betragen:
+%
+\begin{equation}
+  d = \SI{9.985(3)}{\milli\metre}
+\end{equation}
+%
+Nach der Regression, die in Abbildung~\ref{fig:aluminium} zu sehen ist,
+erhält man folgende Gleichung:
+%
+\begin{equation}
+  D(x) = \SI{0.044}{\per\cubic\metre} \left(Lx^2 - \frac{x^3}{3}\right)
+\end{equation}
+%
+Der Fehler für die Steigung ergibt sich aus der Regression zu:
+%
+\begin{equation}
+  \Delta A_f = \SI{0.0004}{\per\cubic\metre}
+\end{equation}
+%
+Wie bereits beim Stahl bestimmt man hieraus mit der Steigung~$A_f$ und
+Formel~\eqref{eq:e-modul} den E-Modul und mithilfe der Fehlerrechnung
+aus Formel~\eqref{eq:gaussfehler-f} läßt sich folgender Wert angeben:
+%
+\begin{equation}
+  E = \SI{73.0(7)}{\kilo\newton\per\milli\metre\squared}  
+\end{equation}
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{SSS}
+    \toprule
+    {$x/\si{\centi\metre}$} & 
+    {$D_v/\si{\micro\metre}$} & 
+    {$D_n/\si{\micro\metre} $} \\
+    \midrule
+    2.7  &   920   &    930 \\
+    7.5  &  1030   &  1170  \\
+    12.5 &  1210   &  1550  \\
+    17.5 &  1430   &  2060  \\
+    22.5 &  1680   &  2680  \\
+    27.5 &  2020   &  3410  \\
+    30.0 &  2220   &  3800  \\
+    32.0 &  2350   &  4150  \\
+    34.0 &  2520   &  4480  \\
+    36.0 &  2710   &  4850  \\
+    38.0 &  2850   &  5230  \\
+    40.0 &  3030   &  5610  \\
+    42.0 &  3190   &  6000  \\
+    44.0 &  3320   &  6410  \\
+    46.0 &  3660   &  6770  \\
+    48.0 &  3800   &  7240  \\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte zur Durchbiegung des Aluminiumstabes}
+  \label{tab:aluminium}
+\end{table}
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{S}
+    \toprule
+    {$d/\si{\milli\metre}$}\\
+    \midrule
+    9.984 \\
+    9.988 \\
+    9.984 \\
+    9.971 \\
+    9.979 \\
+    9.980 \\
+    9.994 \\
+    9.986 \\
+    9.988 \\
+    9.982 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Durchmesserx des Aluminiumstabes}
+  \label{tab:aluminium-durchmesser}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{aluminium-einseitig-quadratisch.pdf}
+  \caption{Meßwerte mit linearer Regression für den Aluminiumstab}
+  \label{fig:aluminium}
+\end{figure}
+
+
+\subsection{Bestimmung des Elastizitätsmoduls von Messing}
+
+Der Messingstab ist beidseitig auf die Länge $L =
+\SI{55.1}{\centi\metre}$ eingespannt. Als Gewicht verwenden wir die
+Masse $m = \SI{4.1}{\kilogram}$. Die Bestimmung des Durchmessers liefert
+die Tabelle~\ref{tab:messing-durchmesser}. Mittelwert und
+Standardabweichung nach Formel~\eqref{eq:durchmesser-fehler} ergeben sich so:
+%
+\begin{equation}
+  d = \SI{9.983(9)}{\milli\meter}
+\end{equation}
+%
+In Abbildung~\ref{fig:messing} sind die Regressionen
+dargestellt. Die beiden Gleichungen lauten folgendermaßen:
+%
+\begin{align}
+  D(x) &= \SI{0.0070}{\per\cubic\metre} 
+  ( 3L^2x-4x^3 ) - \SI{0.0002}{\cubic\metre} 
+  & 0 \le x \le \frac{L}{2}\\
+  D(x) &= \SI{0.0063}{\per\cubic\metre}
+  (4x^3 - 12Lx^2 + 9L^2x - L^3) + \SI{0.0001}{\cubic\metre} 
+  & \frac{L}{2} \le x \le L
+\end{align}
+%
+Die Fehler für die Steigungen ergeben sich aus der Regression zu:
+%
+\begin{align}
+  \Delta A_f &= \SI{0.0004}{\per\cubic\metre}\\
+  \Delta A_g &= \SI{0.0003}{\per\cubic\metre}
+\end{align}
+%
+In Tabelle~\ref{tab:messing} finden sich die Meßwerte dazu. Als
+Ergebnis erhält man aus Formel~\eqref{eq:e-modul}, in die man die beiden
+Steigungen $A_f$ und $A_g$ einsetzt, zwei Werte für $E$:
+\begin{align}
+ E&=\SI{143.8(88)}{\kilo\newton\per\milli\metre\squared} &
+ E&=\SI{159.4(54)}{\kilo\newton\per\milli\metre\squared}
+\end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{messing-beidseitig-quadratisch.pdf}
+  \caption{Meßwerte mit linearer Regression für den Messingstab}
+  \label{fig:messing}
+\end{figure}
+
+\begin{table}
+  \centering
+ 
+  \begin{tabular}{SSS}
+    \toprule
+    {$x/\si{\centi\metre}$} & 
+    {$D_v/\si{\micro\metre}$} & 
+    {$D_n/\si{\micro\metre} $} \\
+    \midrule
+    3.0 &  1010 &   1040 \\
+    8.0 &  1080 &   1310 \\
+    13.0&  1170 &   1640 \\
+    18.0&  1230 &   1940 \\
+    20.0&  1230 &   2040 \\
+    22.0&  1250 &   2140 \\
+    24.0&  1250 &   2220 \\
+    26.0&  1280 &   2280 \\
+    31.6&  2880 &   3910 \\
+    33.0&  2860 &   3900 \\
+    35.0&  2820 &   3810 \\
+    37.0&  2770 &   3750 \\
+    39.0&  2750 &   3680 \\
+    44.0&  2680 &   3370 \\
+    49.0&  2620 &   3020 \\
+    54.0&  2600 &   2690 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte für den Messingstab}
+  \label{tab:messing}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{S}
+    \toprule
+    {$d/\si{\milli\metre}$}\\
+    \midrule
+    9.979 \\
+    9.986 \\
+    9.987 \\
+    9.975 \\
+    9.973 \\
+    9.981 \\
+    9.983 \\
+    9.997 \\
+    9.974 \\
+    9.998 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte für den Durchmesser des Messingstabes}
+  \label{tab:messing-durchmesser}
+\end{table}

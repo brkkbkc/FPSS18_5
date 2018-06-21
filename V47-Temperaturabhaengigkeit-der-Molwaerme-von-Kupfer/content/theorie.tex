@@ -1,0 +1,138 @@
+\section{Zielsetzung}
+  \label{sec:Zielsetzung}
+  In diesem Versuch wird im Experiment vorerst die Temperaturabh"angigkeit der Molw"arme (auch molare W"armekapazit"at) bei konstantem Druck $C_P$ vom Material Kupfer im Bereich von c.a $\SI{80}{\kelvin}$ bis $\SI{300}{\kelvin}$ (Raumptemperatur) bestimmt.
+  Mit diesen Messwerten wird die experimentelle Abh"angigkeit der Molw"arme bei konstantem Volumen $C_V$ ermittelt.
+
+  Mit den so erhaltenen ($C_V(T),T$) wird der experimentelle Wert der materialspeziefischen Debye-Temperatur $\theta_{D,exp}$ bestimmt, welcher mit dem theoretisch berechnetem Wert $\theta_{D,th}$ verglichen wird.
+  Der theoretische Wert wird im dem Debye-Modell f"ur den phononischen Beitrag zur Molw"arme $C_V$ (von Kupfer) definiert.
+
+
+
+
+\section{Theorie}
+  \label{sec:Theorie}
+
+  \subsection{Die W"armekapazit"at $c$, Molw"arme $C$}
+    Die W"armekapazit"at c eines K"orpers ist allgemein definiert als die gesamte W"armezufuhr pro Temperaturerh"ohung
+    \begin{equation}
+      c = \frac{\Delta Q}{\Delta T}=\frac{\partial Q}{\partial T} \; ,
+    \end{equation}
+    ist also eine K"orpereigenschaft.
+    Die W"armekapazit"at wird dabei aber immer bei konstantem Volumen des K"orpers ($C_V$) oder bei konstantem Au"sendruck ($C_P$) betrachtet.
+
+    Wenn weiterhin die W"armekapazit"at bei konstantem Volumen/Druck pro Stoffmenge $n$ des K"orpers betrachtet wird, wird eine Stoffeigenschaft erhalten, die molare W"armekapazit"at oder Molw"arme
+    \begin{equation}
+      C_{V/P} = \frac{c_{V/P}}{n} \; .
+    \end{equation}
+    Zwischen $C_V$ und $C_P$ besteht folgender Zusammenhang
+    \begin{equation}
+      C_V = C_P - (9 \alpha^2 \kappa V_0 T)
+    \end{equation}
+    mit den Materialkonstanten $\alpha=\text{linearer Ausdehnungskoeffizient}$, $
+    \kappa=\text{Kopmressionsmodul}$, $V_0=\text{Molvolumen}$.
+
+    Die Molw"arme bei kosntantem Volumen $C_V$ kann auch berechnet weden als Ableitung der Gesamtenergie $U$ im System nach der Temperatur $T$:
+    \begin{equation}
+      C_V = \left( \frac{\partial U}{\partial T} \right)_V = \frac{\partial}{\partial T} \int_{0}^{\omega_{max}} Z(\omega)\frac{E(\omega)}{f(E(\omega),T)} \: \text{d}\omega
+      \label{molwaerme}
+    \end{equation}
+    $E$ ist gleich $\hbar \omega$ und $f$ ist mittlere Wahrscheinlichkeit, dass ein Phonon im System die Energie $E$ hat, bei der Temperatur $T$.
+    $Z$ ist die Zustandsdichte.
+
+    "Ublicherweise wird die W"armekapazit"at mit eine gro"sen $C$ bezeichnet, und die Molw"arme mit einem kleinen, da dies in der Anleitung aber schon andersrum ist, wird es hier "ubernommen.
+
+
+
+
+  \subsection{Das Debye-Modell f"ur den phononischen Beitrag zur Molw"arme (von Kupfer)}
+    Um den Beitrag der quantiesierten (endliche Kristall"ange) Gitterschwingungen, also Phononen, zur Molw"arme zu berechnen, wird im Debye-Modell f"ur die Phononen nicht von der Ein-Teilchen-Energie des freien Teilchens ausgegangen (Fermi-Gas), sondern von der noch st"arkeren N"aherung
+    \begin{equation}
+      E = \hbar \omega = \hbar v_S k \; .
+    \end{equation}
+    Debei ist $v_S$ die, als konstant gen"aherte, Schallgeschwindigkeit im Material und $k$ die Wellenzahl.
+
+    Die Molw"arme berechnet sich nun nach \ref{molwaerme}, wobei $f$ die Bose-Einstein-Statistik
+    \begin{equation}
+      f=f_{BE}=\frac{1}{e^{\frac{\hbar \omega}{k_B T}}-1}
+    \end{equation}
+    ist, weil Phononen Bosonen sind.
+    Die Zustandsdichte $Z(\omega)$ ist definiert als:
+    \begin{equation}
+      Z(\omega) = \frac{\text{d}N}{\text{d}\omega} = \frac{\text{d}N}{\text{d}k} \frac{\text{d}k}{\text{d}\omega}
+    \end{equation}
+    $\frac{\text{d}N}{\text{d}k}$ wird durch Abz"ahlen der Zust"ande im $k$-Raum in der Kugel mit Radius $k$ erhalten.
+    Insgesamt ergibt sich f"ur die Zustandsidichte:
+    \begin{equation}
+      Z = \frac{3V}{2\pi^2v_s^3}\omega^2 \; \; \text{oder} \; \; Z = \frac{V}{2\pi^2}\omega^2 \left( \frac{1}{v_l^3}  + \frac{2}{v_{tr}^3} \right) \; ,
+    \end{equation}
+    falls man verschiedene Phasengeschwindigkeiten f"ur transversale und longitudinale Wellen ber"ucksichtigt.
+
+    Da ein endlich gro"ser Kristall ,der aus $N_L$ vielen Atomen besteht, nur $3N_L$ viele Eigenschwingungen hat, wird f"ur die Grenzfrequenz aus \ref{molwaerme} ein endlicher Wert erhalten, die Debye-Frequenz $\omega_D$, undzwar aus der Beziehung:
+    \begin{equation}
+      \int_{0}^{\omega_D} Z(\omega) \, \text{d}\omega = 3N_L
+    \end{equation}
+    Da die Betrachtung weiterhin bezogen auf die Stoffmenge $n$ geschieht, ist $N_L$ die Anzahl der Atome pro Molvolumen im idealen Gas, genannt die Loschmidt'sche Zahl.
+    Es folgt
+    \begin{equation}
+      \omega_D^3 = \frac{6\pi^2 v_s^3 N_L}{V} \; \; \text{oder} \; \; \omega_D^3 = \frac{18\pi^2 N_L}{V} \frac{1}{\left( \frac{1}{v_l^3}  + \frac{2}{v_{tr}^3} \right)}
+    \end{equation}
+
+    Damit wird die Molw"arme $C_V$ im Debye-Modell zu
+    \begin{equation}
+      C_V = 9R \left( \frac{T}{\theta_D} \right)^3 \int_{0}^{\frac{\theta_D}{T}} \frac{x^4 e^x}{\left( e^x -1 \right)^2} \, \text{d}x
+      \label{molwaerme debye}
+    \end{equation}
+    mit der Debye-Temperatur $\theta_D$
+    \begin{equation}
+      \theta_D = \frac{\hbar \omega_D}{k_B} \; ,
+    \end{equation}
+    der universellen Gaskonstante $R=3k_B N_L$ und
+    \begin{equation}
+      x = \frac{\hbar \omega}{k_B T} \; .
+    \end{equation}
+
+    Wird $C_V$ als Funktion von $\theta_D/T$ betrachtet, also:
+    \begin{equation}
+      C_V = f\left( \frac{\theta_D}{T} \right) = f(z)
+    \end{equation}
+
+
+    \subsubsection{Grenzfallbetrachtung von $C_V$ im Debye-Modell}
+      F"ur gro"se Temperaturen $T$, also $x<<1$, zeigt die Debye-Funktion/$C_V$  asymptotisches Verhalten, gegen den konstanten Wert $3R$ der Molw"arme, was dem Ergebnis aus der klassischen Betrachtung von $C_V$ entspricht:
+      \begin{equation}
+        \lim\limits_{T \to \infty}{C_V} = 3R
+      \end{equation}
+
+      F"ur tiefe Temperaturen zeigt sich ($T<<\theta_D$) zeigt sich die Proportionalit"at
+      \begin{equation}
+        C_V \propto T^3 \; ,
+      \end{equation}
+      weil das Integral dort temperaturunabh"angig wird.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bbbb

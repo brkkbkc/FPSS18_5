@@ -1,0 +1,10 @@
+# Abstand x in cm	U_therm1/microVolt(50celsius)	U_therm2/microvolt(93 celsius)
+10	153	522
+15	146	513
+20	141	505
+25	129	472
+30	113	418
+35	99	365
+40	85	316
+45	72	276
+50	63	235

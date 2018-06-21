@@ -1,0 +1,174 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+
+\subsection{Bestimmung des Emissionsvermögens}
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSSSS}
+    \toprule
+    & {Schwarz} & {Weiß} & {Metall (matt)} & {Metall (glänzend)} \\
+    {$T/\si{\kelvin}$} &
+    {$U_\text{therm}/\si{\micro\volt}$} &
+    {$U_\text{therm}/\si{\micro\volt}$} &
+    {$U_\text{therm}/\si{\micro\volt}$} &
+    {$U_\text{therm}/\si{\micro\volt}$} \\
+    \midrule
+    92 & 512 & 501 & 68 & 30 \\
+    86 & 452 & 439 & 61 & 29 \\
+    81 & 421 & 394 & 57 & 27 \\
+    75 & 357 & 340 & 41 & 14 \\
+    72 & 328 & 322 & 46 & 14 \\
+    68 & 290 & 284 & 48 & 18 \\
+    63 & 252 & 248 & 37 & 18 \\
+    59 & 219 & 214 & 29 & 10 \\
+    56 & 194 & 189 & 23 & 14 \\
+    53 & 179 & 174 & 22 & 2 \\
+    50 & 153 & 150 & 19 & 2\\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte zur Bestimmung des Emissionsvermögens}
+  \label{tab:strahlung}
+\end{table}
+
+Aus der gemessenen Thermospannung und Temperatur wird mithilfe einer
+linearen Regressionsrechnung das jeweilige Emissionsvermögen
+bestimmt. Da sowohl vor und nach der Strahlungsmessung keine
+Offsetspannung gemessen worden ist, werden die Paare $(T^4-T_0^4, U)$
+der Meßdaten aus Tabelle~\ref{tab:strahlung} in eine lineare
+Ausgleichsrechnung gegeben. Für die Raumtemperatur $T_0$ wird ein Wert
+von \SI{293.16}{\kelvin} angenommen. Hierzu wird die
+\texttt{numpy}-Bibliothek in der Version \texttt{0.12} verwendet. Die
+Ergebnisse sind in Tabelle~\ref{tab:lin-regress} zu finden. Die
+gemessene Thermospannung ist proportional zur abgegebenen Leisung:
+\begin{equation}
+  \label{eq:proport}
+  U = k P = k \epsilon \sigma T^4 = m T^4,
+\end{equation}
+wobei $m$ die Steigung der Ausgleichsgeraden bezeichnet. Die schwarz
+lackierte Oberfläche wird dabei als ein Schwarzer Strahler betrachtet,
+d.\,h. es wird ein Emissionsvermögen $\epsilon = 1$ angenommen. Aus
+Formel~\ref{eq:proport} ergibt sich damit für den
+Proportionalitätsfaktor $k = m_0/\sigma$, wenn die Steigung der
+Ausgleichgerade zur schwarzen Oberfläche mit $m_0$ bezeichnet
+wird. Daraus kann das Emissionsvermögen der einzelnen Oberflächen
+errechnet werden:
+\begin{equation}
+  \epsilon = \frac{m}{k \sigma} = \frac{m}{m_0}
+\end{equation}
+wobei mit $m$ die Steigung der jeweiligen Regressionsgeraden gemeint
+ist. Aufgrund der Tatsache, daß die Steigungen fehlerbehaftete Größen
+sind, wird eine \name{Gauß}sche Fehlerfortpflanzung für $\epsilon$
+durchgeführt.
+\begin{equation}
+  \label{eq:gauss-epsilon}
+  \Delta\epsilon = \sqrt{ \left(\frac{\Delta m}{m_0}\right)^2 +
+    \left(\frac{m \Delta m_0}{m_0^2}\right)^2}
+\end{equation}
+Graphische Darstellungen der linearen Regression sind in
+Abbildung~\ref{fig:plot-emission} zu finden.
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{stefan-boltzmann}
+  \caption{Meßwerte und Ausgleichsgeraden: o.~l. schwarz, o.~r. weiß,
+    u.~l. Metall (matt), u.~r. Metall (glänzend)}
+  \label{fig:plot-emission}
+\end{figure}
+
+\begin{table}
+  \centering
+  \sisetup{
+    table-number-alignment = center,
+    table-figures-decimal = 3,
+    table-figures-uncertainty = 3
+  }
+  \begin{tabular}{lSSS}
+  \toprule
+    & {$m/(\SI{e-8}{\micro\volt\per\kelvin^4})$}
+    & {b/(\SI{e-2}{\milli\volt})} 
+    & {$\epsilon$} \\
+    \midrule
+    Schwarz 
+    & 5.281(733) & -3.203(494) & 1.000(000)\\
+    Weiß
+    & 5.069(392) & -2.780(264) & 0.960(015)\\
+    Metall (matt)
+    & 0.717(058) & -0.482(391) & 0.136(011)\\
+    Metall (glänzend)
+    & 0.387(060) & -0.852(406) & 0.073(011)\\
+    \bottomrule
+  \end{tabular}
+  \caption{Ergebnisse der linearen Regression ($y = mx + b$)}
+  \label{tab:lin-regress}  
+\end{table}
+
+\subsection{Auswertung des Abstandsverhaltens}
+
+Bei der Untersuchung des Abstandsverhaltens ergeben sich die in
+Tabelle~\ref{tab:abstand} dargestellten Werte. Zur Veranschaulichung des
+Abstandsverhaltens wird eine nichtlineare Regression mit der Kurve
+\begin{equation}
+  y = \frac{a}{x^2} + b
+\end{equation}
+durchgeführt (auch hierfür ist \texttt{scipy} verwendet worden).  Die Ergebnisse 
+für die Parameter sind in Tabelle~\ref{tab:param} zu sehen.
+Abbildung~\ref{fig:abstand} zeigt einen Plot dieser Regression.
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSS}
+    \toprule
+    {$x/\si{\centi\metre}$} & 
+    {$U/\si{\micro\volt}$ bei $T = \SI{323.16}{\kelvin}$} &
+    {$U/\si{\micro\volt}$ bei $T = \SI{366.16}{\kelvin}$} \\
+    \midrule
+    30 & 153 & 522\\
+    35 & 146 & 513\\
+    40 & 141 & 505\\
+    45 & 129 & 472\\
+    50 & 113 & 418\\
+    55 & 99 & 365\\
+    60 & 85 & 316\\
+    65 & 72 & 276\\
+    70 & 63 & 235\\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte aus der Abstandsmessung}
+  \label{tab:abstand}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{abstandsmessung}
+  \caption{Darstellungen der nichtlinearen Ausgleichsrechnung. Oben:
+    Messung bei $T = \SI{323.16}{\kelvin}$. Unten: Messung bei $T =
+    \SI{366.16}{\kelvin}$.}
+  \label{fig:abstand}
+\end{figure}
+
+\begin{table}
+  \centering
+  \sisetup{
+    table-number-alignment = center,
+    table-figures-decimal = 3,
+    table-figures-uncertainty = 3
+  }
+  \begin{tabular}{lSS[table-figures-decimal = 2]}
+    \toprule
+    & {$a/(\si{\milli\metre\squared\per\volt})$} &
+    {$b/\si{\micro\volt}$} \\
+    \midrule
+    $T = \SI{323.16}{\kelvin}$ & 10(2) & 6(1)\\
+    $T = \SI{366.16}{\kelvin}$ & 31(7) & 250(40)\\
+    \bottomrule
+  \end{tabular}
+  \caption{Ergebnisse der nichtlinearen Ausgleichsrechnung für die Parameter.}
+  \label{tab:param}
+\end{table}
+

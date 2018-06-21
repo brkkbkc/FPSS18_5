@@ -1,0 +1,823 @@
+Last login: Mon May 14 08:03:08 on ttys000
+You have new mail.
+Buraks-MBP:~ burakkabakci$ gnuplot
+
+	G N U P L O T
+	Version 4.6 patchlevel 5    last modified February 2014
+	Build System: Darwin x86_64
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2014
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type set to 'aqua'
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points
+gnuplot> f(x)=a*exp(x*b)
+gnuplot> fit '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' with a,b
+         undefined variable: with
+
+gnuplot> fit '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a,b
+         undefined variable: via
+
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a,b
+
+
+ Iteration 0
+ WSSR        : 1.42313e+261      delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.80021e+132
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+/
+
+ Iteration 1
+ WSSR        : 2.64369e+260      delta(WSSR)/WSSR   : -4.3831
+ delta(WSSR) : -1.15876e+261     limit for stopping : 1e-05
+ lambda	  : 1.80021e+131
+
+resultant parameter values
+
+a               = 0.999992
+b               = 0.9972
+
+The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
+final sum of squares of residuals : 2.64369e+260
+rel. change during last iteration : -4.3831
+
+degrees of freedom    (FIT_NDF)                        : 25
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.25189e+129
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.05748e+259
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.999992         +/- 170.3        (1.703e+04%)
+b               = 0.9972           +/- 0.486        (48.74%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points, \
+>f(x)
+gnuplot> f=a*x**2
+         undefined variable: x
+
+gnuplot> f(x)=a*x**2
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a
+
+
+ Iteration 0
+ WSSR        : 1.29163e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 69216.1
+
+initial set of free parameter values
+
+a               = 0.999992
+/
+
+ Iteration 1
+ WSSR        : 1.64762e+08       delta(WSSR)/WSSR   : -782.935
+ delta(WSSR) : -1.28998e+11      limit for stopping : 1e-05
+ lambda	  : 6921.61
+
+resultant parameter values
+
+a               = 0.036417
+/
+
+ Iteration 2
+ WSSR        : 13772.6           delta(WSSR)/WSSR   : -11962.1
+ delta(WSSR) : -1.64749e+08      limit for stopping : 1e-05
+ lambda	  : 692.161
+
+resultant parameter values
+
+a               = 0.000742286
+/
+
+ Iteration 3
+ WSSR        : 13750             delta(WSSR)/WSSR   : -0.00164236
+ delta(WSSR) : -22.5825          limit for stopping : 1e-05
+ lambda	  : 69.2161
+
+resultant parameter values
+
+a               = 0.000729074
+/
+
+ Iteration 4
+ WSSR        : 13750             delta(WSSR)/WSSR   : -2.27539e-14
+ delta(WSSR) : -3.12866e-10      limit for stopping : 1e-05
+ lambda	  : 6.92161
+
+resultant parameter values
+
+a               = 0.000729074
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 13750
+rel. change during last iteration : -2.27539e-14
+
+degrees of freedom    (FIT_NDF)                        : 26
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 22.9967
+variance of residuals (reduced chisquare) = WSSR/ndf   : 528.847
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.000729074      +/- 6.394e-05    (8.77%)
+
+
+correlation matrix of the fit parameters:
+
+               a      
+a               1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points, \
+>f(x)
+gnuplot> f(x)=exp(x)
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt'
+                  ^
+         Need via and either parameter list or file
+
+gnuplot> f(x)=a*exp(x)
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a
+
+
+ Iteration 0
+ WSSR        : 7.5646e+254       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 7.26005e+129
+
+initial set of free parameter values
+
+a               = 0.000729074
+/
+
+ Iteration 1
+ WSSR        : 9.64873e+251      delta(WSSR)/WSSR   : -783
+ delta(WSSR) : -7.55496e+254     limit for stopping : 1e-05
+ lambda	  : 7.26005e+128
+
+resultant parameter values
+
+a               = 2.60383e-05
+
+The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
+final sum of squares of residuals : 9.64873e+251
+rel. change during last iteration : -783
+
+degrees of freedom    (FIT_NDF)                        : 26
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.92641e+125
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.71105e+250
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 2.60383e-05      +/- 5.107e-06    (19.61%)
+
+
+correlation matrix of the fit parameters:
+
+               a      
+a               1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points, \
+>f(x
+                                                                                                                 ^
+         ')' expected
+
+gnuplot> f(x)
+             ^
+         missing filename
+
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points, \
+>f(x)
+gnuplot> f(x)=exp(a*x)+c
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a,c
+
+
+ Iteration 0
+ WSSR        : 77867.4           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 184.676
+
+initial set of free parameter values
+
+a               = 2.60383e-05
+c               = 1
+**/
+
+ Iteration 1
+ WSSR        : 77179.3           delta(WSSR)/WSSR   : -0.0089154
+ delta(WSSR) : -688.085          limit for stopping : 1e-05
+ lambda	  : 1846.76
+
+resultant parameter values
+
+a               = 0.000963179
+c               = 1
+*/
+
+ Iteration 2
+ WSSR        : 75978.3           delta(WSSR)/WSSR   : -0.0158071
+ delta(WSSR) : -1201             limit for stopping : 1e-05
+ lambda	  : 1846.76
+
+resultant parameter values
+
+a               = 0.00217519
+c               = 1.00001
+*/
+
+ Iteration 3
+ WSSR        : 73488.6           delta(WSSR)/WSSR   : -0.0338789
+ delta(WSSR) : -2489.71          limit for stopping : 1e-05
+ lambda	  : 1846.76
+
+resultant parameter values
+
+a               = 0.00385642
+c               = 1.00001
+*/
+
+ Iteration 4
+ WSSR        : 66578.6           delta(WSSR)/WSSR   : -0.103788
+ delta(WSSR) : -6910.05          limit for stopping : 1e-05
+ lambda	  : 1846.76
+
+resultant parameter values
+
+a               = 0.00645386
+c               = 1.00001
+*/
+
+ Iteration 5
+ WSSR        : 36936             delta(WSSR)/WSSR   : -0.802538
+ delta(WSSR) : -29642.5          limit for stopping : 1e-05
+ lambda	  : 1846.76
+
+resultant parameter values
+
+a               = 0.0110254
+c               = 1.00002
+*/
+
+ Iteration 6
+ WSSR        : 8403.28           delta(WSSR)/WSSR   : -3.39543
+ delta(WSSR) : -28532.7          limit for stopping : 1e-05
+ lambda	  : 1846.76
+
+resultant parameter values
+
+a               = 0.0154083
+c               = 1.00002
+/
+
+ Iteration 7
+ WSSR        : 4949.09           delta(WSSR)/WSSR   : -0.697944
+ delta(WSSR) : -3454.19          limit for stopping : 1e-05
+ lambda	  : 184.676
+
+resultant parameter values
+
+a               = 0.0148001
+c               = 0.999963
+/
+
+ Iteration 8
+ WSSR        : 4913.52           delta(WSSR)/WSSR   : -0.00723955
+ delta(WSSR) : -35.5717          limit for stopping : 1e-05
+ lambda	  : 18.4676
+
+resultant parameter values
+
+a               = 0.0147292
+c               = 0.994859
+/
+
+ Iteration 9
+ WSSR        : 4741.4            delta(WSSR)/WSSR   : -0.0363019
+ delta(WSSR) : -172.122          limit for stopping : 1e-05
+ lambda	  : 1.84676
+
+resultant parameter values
+
+a               = 0.0147559
+c               = 0.494885
+/
+
+ Iteration 10
+ WSSR        : 761.094           delta(WSSR)/WSSR   : -5.22971
+ delta(WSSR) : -3980.3           limit for stopping : 1e-05
+ lambda	  : 0.184676
+
+resultant parameter values
+
+a               = 0.0157665
+c               = -17.2247
+/
+
+ Iteration 11
+ WSSR        : 58.3044           delta(WSSR)/WSSR   : -12.0538
+ delta(WSSR) : -702.79           limit for stopping : 1e-05
+ lambda	  : 0.0184676
+
+resultant parameter values
+
+a               = 0.0160361
+c               = -26.3081
+/
+
+ Iteration 12
+ WSSR        : 57.162            delta(WSSR)/WSSR   : -0.0199852
+ delta(WSSR) : -1.14239          limit for stopping : 1e-05
+ lambda	  : 0.00184676
+
+resultant parameter values
+
+a               = 0.0160278
+c               = -26.3314
+/
+
+ Iteration 13
+ WSSR        : 57.162            delta(WSSR)/WSSR   : -2.24749e-07
+ delta(WSSR) : -1.28471e-05      limit for stopping : 1e-05
+ lambda	  : 0.000184676
+
+resultant parameter values
+
+a               = 0.0160277
+c               = -26.3312
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 57.162
+rel. change during last iteration : -2.24749e-07
+
+degrees of freedom    (FIT_NDF)                        : 25
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.51211
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.28648
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.0160277        +/- 2.626e-05    (0.1638%)
+c               = -26.3312         +/- 0.5811       (2.207%)
+
+
+correlation matrix of the fit parameters:
+
+               a      c      
+a               1.000 
+c              -0.866  1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points, \
+>f(x)
+gnuplot> f(x)=exp(a*x)+c
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a,c
+
+
+ Iteration 0
+ WSSR        : 57.162            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 15647.9
+
+initial set of free parameter values
+
+a               = 0.0160277
+c               = -26.3312
+/
+
+ Iteration 1
+ WSSR        : 57.162            delta(WSSR)/WSSR   : -3.43592e-11
+ delta(WSSR) : -1.96404e-09      limit for stopping : 1e-05
+ lambda	  : 1564.79
+
+resultant parameter values
+
+a               = 0.0160277
+c               = -26.3312
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 57.162
+rel. change during last iteration : -3.43592e-11
+
+degrees of freedom    (FIT_NDF)                        : 25
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.51211
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.28648
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.0160277        +/- 2.626e-05    (0.1638%)
+c               = -26.3312         +/- 0.5811       (2.207%)
+
+
+correlation matrix of the fit parameters:
+
+               a      c      
+a               1.000 
+c              -0.866  1.000 
+gnuplot> set xlabel 'T_in_K'
+gnuplot> set ylabel 'i(T)'
+gnuplot> 
+gnuplot> f(x)=exp(a*x)+c
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a,c
+
+
+ Iteration 0
+ WSSR        : 57.162            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 15647.9
+
+initial set of free parameter values
+
+a               = 0.0160277
+c               = -26.3312
+/
+
+ Iteration 1
+ WSSR        : 57.162            delta(WSSR)/WSSR   : -6.78572e-13
+ delta(WSSR) : -3.87885e-11      limit for stopping : 1e-05
+ lambda	  : 1564.79
+
+resultant parameter values
+
+a               = 0.0160277
+c               = -26.3312
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 57.162
+rel. change during last iteration : -6.78572e-13
+
+degrees of freedom    (FIT_NDF)                        : 25
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.51211
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.28648
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.0160277        +/- 2.626e-05    (0.1638%)
+c               = -26.3312         +/- 0.5811       (2.207%)
+
+
+correlation matrix of the fit parameters:
+
+               a      c      
+a               1.000 
+c              -0.866  1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten_1, \
+>f(x) title 'Ausgleichskurve'
+
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten_1, f(x) title 'Ausgleichskurve''
+                                                                                                                                             ^
+         ';' expected
+
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten_1, \
+>f(x) title 'Ausgleichskurve'
+
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten_1, f(x) title 'Ausgleichskurve''
+                                                                                                                                             ^
+         ';' expected
+
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten_1, \
+>f(x)
+gnuplot> 
+gnuplot> 
+gnuplot> set xlabel 'T_in_K'
+gnuplot> set ylabel 'i(T)'
+gnuplot> 
+gnuplot> f(x)=exp(a*x)+c
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a,c
+
+
+ Iteration 0
+ WSSR        : 57.162            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 15647.9
+
+initial set of free parameter values
+
+a               = 0.0160277
+c               = -26.3312
+****************
+The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
+final sum of squares of residuals : 57.162
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 25
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.51211
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.28648
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.0160277        +/- 2.626e-05    (0.1638%)
+c               = -26.3312         +/- 0.5811       (2.207%)
+
+
+correlation matrix of the fit parameters:
+
+               a      c      
+a               1.000 
+c              -0.866  1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten_1, \
+>f(x)
+gnuplot> f(x)=exp(a*x)+c
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a,c
+
+
+ Iteration 0
+ WSSR        : 50.5649           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 16383.2
+
+initial set of free parameter values
+
+a               = 0.0160277
+c               = -26.3312
+/
+
+ Iteration 1
+ WSSR        : 50.5156           delta(WSSR)/WSSR   : -0.000977256
+ delta(WSSR) : -0.0493666        limit for stopping : 1e-05
+ lambda	  : 1638.32
+
+resultant parameter values
+
+a               = 0.0160258
+c               = -26.3312
+/
+
+ Iteration 2
+ WSSR        : 50.5155           delta(WSSR)/WSSR   : -5.8518e-07
+ delta(WSSR) : -2.95607e-05      limit for stopping : 1e-05
+ lambda	  : 163.832
+
+resultant parameter values
+
+a               = 0.0160258
+c               = -26.3312
+
+After 2 iterations the fit converged.
+final sum of squares of residuals : 50.5155
+rel. change during last iteration : -5.8518e-07
+
+degrees of freedom    (FIT_NDF)                        : 22
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.51531
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.29616
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.0160258        +/- 2.737e-05    (0.1708%)
+c               = -26.3312         +/- 0.6337       (2.407%)
+
+
+correlation matrix of the fit parameters:
+
+               a      c      
+a               1.000 
+c              -0.873  1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points, \
+>f(x)
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten', \
+>f(x)
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten', \
+>f(x) title 'Ausgleichskurve'
+gnuplot> 
+gnuplot> 
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_zweite_messung/alle_werte/V48_zweite_werte.txt' via a,c
+
+
+ Iteration 0
+ WSSR        : 1513.5            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 15174.5
+
+initial set of free parameter values
+
+a               = 0.0160258
+c               = -26.3312
+/
+
+ Iteration 1
+ WSSR        : 159.222           delta(WSSR)/WSSR   : -8.50561
+ delta(WSSR) : -1354.28          limit for stopping : 1e-05
+ lambda	  : 1517.45
+
+resultant parameter values
+
+a               = 0.0157171
+c               = -26.3312
+/
+
+ Iteration 2
+ WSSR        : 154.434           delta(WSSR)/WSSR   : -0.0309977
+ delta(WSSR) : -4.78711          limit for stopping : 1e-05
+ lambda	  : 151.745
+
+resultant parameter values
+
+a               = 0.0156967
+c               = -26.3312
+/
+
+ Iteration 3
+ WSSR        : 154.392           delta(WSSR)/WSSR   : -0.000274614
+ delta(WSSR) : -0.0423982        limit for stopping : 1e-05
+ lambda	  : 15.1745
+
+resultant parameter values
+
+a               = 0.0156966
+c               = -26.3303
+/
+
+ Iteration 4
+ WSSR        : 150.359           delta(WSSR)/WSSR   : -0.026822
+ delta(WSSR) : -4.03293          limit for stopping : 1e-05
+ lambda	  : 1.51745
+
+resultant parameter values
+
+a               = 0.0156925
+c               = -26.2374
+/
+
+ Iteration 5
+ WSSR        : 93.3708           delta(WSSR)/WSSR   : -0.610344
+ delta(WSSR) : -56.9883          limit for stopping : 1e-05
+ lambda	  : 0.151745
+
+resultant parameter values
+
+a               = 0.0155966
+c               = -24.0732
+/
+
+ Iteration 6
+ WSSR        : 90.0215           delta(WSSR)/WSSR   : -0.0372048
+ delta(WSSR) : -3.34923          limit for stopping : 1e-05
+ lambda	  : 0.0151745
+
+resultant parameter values
+
+a               = 0.0155649
+c               = -23.4108
+/
+
+ Iteration 7
+ WSSR        : 90.021            delta(WSSR)/WSSR   : -6.25659e-06
+ delta(WSSR) : -0.000563224      limit for stopping : 1e-05
+ lambda	  : 0.00151745
+
+resultant parameter values
+
+a               = 0.0155646
+c               = -23.4081
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 90.021
+rel. change during last iteration : -6.25659e-06
+
+degrees of freedom    (FIT_NDF)                        : 28
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.79305
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.21504
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.0155646        +/- 3.476e-05    (0.2234%)
+c               = -23.4081         +/- 0.6542       (2.795%)
+
+
+correlation matrix of the fit parameters:
+
+               a      c      
+a               1.000 
+c              -0.866  1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_zweite_messung/alle_werte/V48_14_K_iT.txt' with points title 'Messdaten_2', \
+>f(x) title 'Ausgleichskurve'
+gnuplot> 
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_erste_werte.txt' via a,c
+
+
+ Iteration 0
+ WSSR        : 1428.29           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 14341.9
+
+initial set of free parameter values
+
+a               = 0.0155646
+c               = -23.4081
+/
+
+ Iteration 1
+ WSSR        : 107.928           delta(WSSR)/WSSR   : -12.2337
+ delta(WSSR) : -1320.36          limit for stopping : 1e-05
+ lambda	  : 1434.19
+
+resultant parameter values
+
+a               = 0.0159227
+c               = -23.4081
+/
+
+ Iteration 2
+ WSSR        : 106.887           delta(WSSR)/WSSR   : -0.00973746
+ delta(WSSR) : -1.04081          limit for stopping : 1e-05
+ lambda	  : 143.419
+
+resultant parameter values
+
+a               = 0.0159135
+c               = -23.4081
+/
+
+ Iteration 3
+ WSSR        : 106.856           delta(WSSR)/WSSR   : -0.000292989
+ delta(WSSR) : -0.0313077        limit for stopping : 1e-05
+ lambda	  : 14.3419
+
+resultant parameter values
+
+a               = 0.0159135
+c               = -23.409
+/
+
+ Iteration 4
+ WSSR        : 103.854           delta(WSSR)/WSSR   : -0.0289043
+ delta(WSSR) : -3.00183          limit for stopping : 1e-05
+ lambda	  : 1.43419
+
+resultant parameter values
+
+a               = 0.0159168
+c               = -23.4938
+/
+
+ Iteration 5
+ WSSR        : 53.9949           delta(WSSR)/WSSR   : -0.923411
+ delta(WSSR) : -49.8594          limit for stopping : 1e-05
+ lambda	  : 0.143419
+
+resultant parameter values
+
+a               = 0.0160046
+c               = -25.7495
+/
+
+ Iteration 6
+ WSSR        : 50.2096           delta(WSSR)/WSSR   : -0.0753888
+ delta(WSSR) : -3.78524          limit for stopping : 1e-05
+ lambda	  : 0.0143419
+
+resultant parameter values
+
+a               = 0.0160345
+c               = -26.5597
+/
+
+ Iteration 7
+ WSSR        : 50.2095           delta(WSSR)/WSSR   : -1.83081e-06
+ delta(WSSR) : -9.19242e-05      limit for stopping : 1e-05
+ lambda	  : 0.00143419
+
+resultant parameter values
+
+a               = 0.0160345
+c               = -26.5627
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 50.2095
+rel. change during last iteration : -1.83081e-06
+
+degrees of freedom    (FIT_NDF)                        : 22
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.51071
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.28225
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.0160345        +/- 2.721e-05    (0.1697%)
+c               = -26.5627         +/- 0.6316       (2.378%)
+
+
+correlation matrix of the fit parameters:
+
+               a      c      
+a               1.000 
+c              -0.873  1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/MESSUNG/V48_erste_messung/alle_werte/V48_19_K_iT.txt' with points title 'Messdaten_1', \
+>f(x) title 'Ausgleichskurve'
+gnuplot> 

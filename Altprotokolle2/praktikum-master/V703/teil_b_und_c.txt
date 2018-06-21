@@ -1,0 +1,17 @@
+# b) Nachentladungszeit (bei 700 V)
+# Abstand zwischen Primär- und Nachentladungspeak.
+# Kästchen  Sekunden/Kästchen   Ablesefehler/Sekunden
+4.5   50e-6    12.5e-6
+
+# c) Totzeitmessungen
+# 1. Methode: 2-Quellen-Methode (bei 500 V)
+# Impulse    DeltaT/s    Fehler
+120286    180    0
+  5164    180    0
+121980    180    0
+
+# 2. Methode: Oszilloskop (bei 700V)
+
+# Kästchen   Sekunden/Kästchen    Ablesefehler/Sekunden
+2.5    50e-6    12.5e-6  # Totzeit
+8     100e-6    12.5e-6  # Totzeit + Erholungszeit
