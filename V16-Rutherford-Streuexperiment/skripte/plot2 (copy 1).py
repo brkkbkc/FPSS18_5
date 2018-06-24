@@ -12,19 +12,19 @@ theta, Z_out=np.genfromtxt("zaehlrate-und-zugehoeriger-winkel.txt", unpack=True)
 Z_out = Z_out/60
 #theta=theta*2*np.pi/360
 
-Z_Quelle=285000/1 #pro sekunde
+Z_Quelle=285/1 #pro sekunde
 F=20*10**(-6)
 A_Folie=np.pi*1/4*10**(-4) #1cm durchmesser ????
 A_Detektor=np.pi*1/4*10**(-4)
 pi=np.pi
 d=2*10**(-6)
-N_Folie= 1.18*10**(23) #N_Folie (in anzahl pro m^2) = N(teilchenanzahl pro m^3 *d), eigentlich 23 im exponenten
+N_Folie= 1.18*10**(22) #N_Folie (in anzahl pro m^2) = N(teilchenanzahl pro m^3 *d), eigentlich 23 im exponenten
 
 #y=((Z_out*8*pi**2 * 0.039**2 * 0.017**2)/(Z_Quelle*F*A_Folie*np.cos(theta/2)))*((8*pi**2*0.041**2*0.04**2)/(F*A_Detektor))*1/(N_Folie*d)
 #print(y)
 
 #eigentlich
-y=((Z_out*4*pi*(0.039+0.017)**2)/(Z_Quelle*F))*((4*pi*(0.039+0.017+0.041)**2)/(F*np.cos(theta*2*pi/(2*360))))*((1)/(N_Folie))
+y=((Z_out*4*pi*(0.0039+0.0017)**2)/(Z_Quelle*F))*((4*pi*(0.0039+0.0017+0.0041)**2)/(F*np.cos(theta*2*pi/(2*360))))*((1)/(N_Folie))
 #print(y)
 
 #jetzt normale funktion plotten
