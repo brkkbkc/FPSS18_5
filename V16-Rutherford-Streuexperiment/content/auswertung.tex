@@ -20,8 +20,7 @@
 
 
 \subsection{\texorpdfstring{Bestimmung der Foliendicke einer Goldfolie durch Energieverlustmessung der $\alpha$-Teilchen}{Bestimmung der Foliendicke einer Goldfolie durch Energieverlustmessung der alpha-Teilchen}}
-Zur Bestimmung der Foliendicke wurde eine Energieverlustmessung durchgeführt.
-Die Messwerte sind in Tabelle 2 und 3 aufgelistet. 
+Um die Foliendicke zu bestimmen wurde eine Energieverlustmessung durchgeführt. Die Messwerte sind in Tabelle \ref{tab:mit} und \ref{tab:ohne} aufgetragen. 
 \begin{table}[H] 
 	\centering
 	\begin{tabular}{c|c}
@@ -45,6 +44,7 @@ Die Messwerte sind in Tabelle 2 und 3 aufgelistet.
 		
 	\end{tabular} 
 	\caption{Messwerte für die Energieverlustmessung mit Folie } 
+	  \label{tab:mit}
 \end{table}  
 
 \begin{table}[H] 
@@ -61,9 +61,10 @@ Die Messwerte sind in Tabelle 2 und 3 aufgelistet.
 	
 	\end{tabular} 
 	\caption{Messwerte für die Energieverlustmessung ohne Folie } 
+	\label{tab:ohne}
 \end{table} 
 
-Die Werte für die Pulshöhe werden gegen den Druck aufgetragen. \\ Mittels linearer Regression ergibt sich folgender Graph:   
+Die Werte für die Pulshöhe werden gegen den Druck aufgetragen. Eine lineare Funktion die durch $f(x)=a\cdot x+b$ gegeben ist wird an die Messwerte angepasst.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=12cm,height=8cm]{auswertung/v16_plot1.pdf}
@@ -71,33 +72,34 @@ Die Werte für die Pulshöhe werden gegen den Druck aufgetragen. \\ Mittels line
 	\label{img:grafik-dummy}
 \end{figure}
 \newpage 
-Aus der Ausgleichsrechnung ergeben sich für die Parameter m und b der Funktion $f(x)=m\cdot x+b$ für die Messung mit und ohne eingesetzter Folie folgende Werte: 
+Aus der Ausgleichsrechnung ergeben sich für die Parameter a und b der Funktion $f(x)=a\cdot x+b$ für die Messung mit und ohne Goldfolie folgende Werte: 
 \begin{align*}
-m_{ohne}= -3,71 \pm 0,1602 \; \frac{1}{\text{mbar}}
+a_{ohne}= -3,71 \pm 0,1602 \; \frac{1}{\text{mbar}}
 \\
-m_{mit}= -3,09 \pm 0,1578 \; \frac{1}{\text{mbar}}
+a_{mit}= -3,09 \pm 0,1578 \; \frac{1}{\text{mbar}}
 \\
 \\
 b_{ohne}= 1466,4 \pm 14,68 \; \text{mV}
 \\
 b_{mit}= 996,82 \pm  13,43 \; \text{mV}
 \end{align*}
-Die Differenz dieser beiden Geraden entspricht dem Energieverlust durch die Folie. Durch die Subtraktion der Achsenabschnitte wird zunächst die Differenz der Impulshöhen bestimmt: 
+Die Differenz dieser beiden Geraden entspricht dem Energieverlust durch die Folie. Die Differenz der Impulshöhen wird durch die Subtraktion der Achsenabschnitte bestimmt: 
 \begin{align}
 b_{ohne}-b_{mit}= 469,58 \pm 28,11 \; \text{mV}
 \end{align} 
-Aus dem Termschema in Abbildung 2 lässt sich für die Energie des $\alpha$-Teilchens der Wert E=5.486 MeV ablesen. Im Folgenden wird angenommen, dass das die Energie ist, die bei der Messung ohne Folie am Detektor detektiert wird. Unter dieser Annahme lässt sich der Energieverlust mit der Differenz der Impulshöhen (4) berechnen zu: 
+Um aus der Differenz der Impulshöhen einen Energiedifferenz zu erhalten wird die Impulshöhe beim Druck $p=0$ bei der Messung ohne Goldfolie der ursprünglichen Energie $E_\alpha$ zu geordnet. 
+
 \begin{align*}
 \Delta E= 1,7568 \pm 0,10\;  \text{MeV}  
 \end{align*} 
 
-Mit dem Energieverlust lässt sich durch Umstellen der Bethe-Bloch-Gleichung (1) und Einsetzen der folgenden materialabhängigen Parameter die Dicke der Folie dx bestimmen.  
-Die Masse des $\alpha$-Teilchens lässt sich über $m=A \cdot u$ bestimmen. Dabei ist A die elementspezifische Massenzahl und u die atomare Masseneinheit. Für ein $\alpha$-Teilchen gilt A=4 sodass sich für die Masse folgender Wert ergibt: 
+Die Dicke der Folie $x$ wird mit dem Energieverlust und durch Umstellen der Bethe-Bloch-Gleichung (1) bestimmt. Dabei werden folgende materialabhängigen Parameter benutzt. Die Masse des $\alpha$-Teilchens lässt sich über $m=A \cdot u$ bestimmen. A ist die elementspezifische Massenzahl und u die atomare Masseneinheit. Für ein $\alpha$-Teilchen gilt A=4, sodass sich für die Masse folgender Wert ergibt: 
 
 \begin{align*}
 m_{\alpha}= 6.64 \cdot 10^{-27} \text{kg} 
 \end{align*} 
-damit lässt sich die Geschwindigkeit mit \begin{align*}
+Die Geschwindigkeit lässt sich damit mit der Formel 
+\begin{align*}
 v_{\alpha}= \sqrt{\frac{2\cdot E_{\alpha}}{m_{\alpha}}} 
 \end{align*} 
 bestimmen:
@@ -106,14 +108,15 @@ v_{\alpha}=16.27 \cdot 10^{6} \frac{\text{m}}{\text{s}}
 \end{align*} 
 
 Die Anzahl der Teilchen pro Volumeneinheit N lässt sich über \begin{align}
-N= \frac{\rho}{m} 
-\end{align} bestimmen. Für die Dichte des Targetmaterials $\rho$ wird 19320 $\frac{\text{kg}}{\text{m}^3}$ $[1]$ eingesetzt. Die Masse wird wieder mittels des Produktes aus Massenzahl und atomarer Masseneinheit bestimmt. \\ Daraus ergibt sich für die Masse von Gold (A=197 $[5]$): $m_{Gold}=1.31 \cdot 10^{-25}$ kg und damit folgende  Anzahl der Teilchen pro $\text{m}^3$: 
+N= \frac{\rho}{m_{Atom}} 
+\end{align} mit der Atommasse $m_{Atom}=A \cdot u$ bestimmen. 
+Für die Dichte des Targetmaterials $\rho$ wird 19320 $\frac{\text{kg}}{\text{m}^3}$ $[1]$ eingesetzt. Daraus ergibt sich für die Masse von Gold 
  \begin{align*}
- 5.91 \cdot 10^{28} \frac{1}{\text{m}^3}
+ N=5.91 \cdot 10^{28} \frac{1}{\text{m}^3}
  \end{align*} 
- Aus den berechneten Werten und der Ionisationsenergie von Gold $I=9.225 \frac{\text{eV}}{\text{atom}} \; [5]$ und den Ordnungzahlen Z$_{\alpha}$=2 und Z$_{Gold}$=79 ergibt sich folgender Wert:
+ Aus den berechneten Werten und der Ionisationsenergie von Gold $I=9.225 \frac{\text{eV}}{\text{atom}} \; [5]$ und den Ordnungzahlen z=2 und Z$_{Gold}$=79 ergibt sich folgender Wert:
  \begin{align*}
- dx= ( 0,94 \pm 0,05) \; \mu \text{m}
+ x= ( 0,94 \pm 0,05) \; \mu \text{m}
  \end{align*}
 
 \subsection{Vermessung des Rutherford-Streugesetzes}
@@ -180,46 +183,42 @@ N= \frac{\rho}{m}
 
 
 
-Die Messwerte für die Folien aus verschiedenen Materialien sind in Tabelle 7 aufgelistet. Außerdem sind die zur Berechnung des Wirkungsquerschnittes benötigten Stoffeigenschaften ebenfalls in Tabelle 7 zu finden. 
+Die Messwerte für die Folien aus verschiedenen Materialien sind in Tabelle \ref{tab:werte} aufgelistet.
 
 \begin{table}[H] 
 \centering
 \begin{tabular}{c|c c c c c c c}
 
-	Folienmaterial &Dichte $\rho [\frac{kg}{m^3}]$& Z & A & N [$\cdot 10^{28} \frac{1}{m^3}$]& Zeit t [s]& Zählrate n & n/t [s$^{-1}$]  \\ 
+	Folienmaterial & Foliendicke & Z & N [$\cdot 10^{28} \frac{1}{m^3}$]& Zeit t [s]& Zählrate n & n/t [s$^{-1}$] & $log(\frac{I_\alpha}{Nx})$ \\ 
 	\hline 
-	Aluminium (3 $\mu$m) &2,7 $\cdot 10^{4}$& 13 & 27& 6,022 & 120  & 619 & 5,15  \\ 
+	Aluminium & 3 $\mu$m & 13 & 6,022 & 120  & 619 & 5,15 & -22,545 \\ 
 
-	Bismut (1 $\mu$m)& 9,78 $\cdot 10^{4}$  & 83 & 209& 2,818 & 120 & 705 & 5,87 \\ 
+	Bismut &1 $\mu$m & 83 & 2,818 & 120 & 705 & 5,87 & -21,681\\ 
 
-	Gold (2 $\mu$m) & 1,93   $\cdot 10^{4}$ & 79 & 197 & 5.910 & 120 & 121 & 1,008 \\ 
+	Gold & 2 $\mu$m& 79 &  5.910 & 120 & 121 & 1,008 & -23,069\\ 
 
 \end{tabular} 
 	\caption{Messwerte für Folien aus unterschiedlichem Material} 
+	\label{tab:werte}
 \end{table}
  
- Die aus diesen Werten mittels der Formeln (2) und (7) berechneten Wirkungsquerschnitte sind in Tabelle 8 aufgelistet:
- 
- \begin{table}[H] 
- 	\centering
- 	\begin{tabular}{c|c c }
- 		
- 		Folienmaterial & Z & $log(\frac{I_\alpha}{Nx})$ \\ 
- 		\hline 
- 		
- 		Aluminium & 13 & -22,545 \\ 
- 		
- 		Bismut & 83 & -21,681   \\
- 		
- 		Gold & 79 & -23,069 \\ 
- 		
- 	\end{tabular} 
- 	\caption{Wirkungsquerschnitte für Folien aus verschiedenem Material} 
- \end{table}
-Um die Z-Abhängigkeit zu untersuchen, wird in Abbildung 5 $\frac{n}{N\cdot dx}$ gegen die Ordnungszahl Z aufgetragen: 
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=12cm,height=8cm]{auswertung/v16_plot2.pdf}
 	\caption{Z-Abhängigkeit}
 	\label{img:grafik-dummy}
 \end{figure}
+
+Um die Z-Abhängigkeit zu bestimmen wird der Logarithmus von $\frac{I_\alpha}{Nx}$ gegen den Logarithmus von Z aufgetragen und eine Ausgleichsfunktion die durch $f(x)=a\cdot x+b$ gegeben ist an die Messwerte angepasst. \\
+Aus der Ausgleichsrechnung ergeben sich für die Parameter a und b
+
+\begin{align*}
+a= 0,25 \pm 1,51 
+\\
+b= -22,84 \pm 2,54 
+\end{align*}
+
+a ist in dem Fall die Potenz der Z-Abhängigkeit. Das lässt drauf schließen, dass die Streuung von der Bethe-Bloch Formel beschrieben wird.
+
+
