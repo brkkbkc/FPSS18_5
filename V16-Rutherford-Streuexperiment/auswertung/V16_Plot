@@ -1,0 +1,319 @@
+Last login: Sun Jun 24 15:44:20 on ttys001
+You have new mail.
+Buraks-MBP:~ burakkabakci$ gnuplot
+
+	G N U P L O T
+	Version 4.6 patchlevel 5    last modified February 2014
+	Build System: Darwin x86_64
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2014
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type set to 'aqua'
+gnuplot> set xlabel 'Druck / mbar'
+gnuplot> set ylabel 'Amplitude / mV'
+gnuplot> 
+gnuplot> f(x)=a*x+b
+gnuplot> g(x)=c*x+d
+gnuplot> h(x)=e*x+f
+gnuplot> 
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/aktivitaetohne.txt' via a,b
+
+
+ Iteration 0
+ WSSR        : 6.41952e+06       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 64.8113
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+/
+
+ Iteration 1
+ WSSR        : 3.37474e+06       delta(WSSR)/WSSR   : -0.902225
+ delta(WSSR) : -3.04478e+06      limit for stopping : 1e-05
+ lambda	  : 6.48113
+
+resultant parameter values
+
+a               = 8.76377
+b               = 1.61447
+/
+
+ Iteration 2
+ WSSR        : 3.11381e+06       delta(WSSR)/WSSR   : -0.0837993
+ delta(WSSR) : -260935           limit for stopping : 1e-05
+ lambda	  : 0.648113
+
+resultant parameter values
+
+a               = 9.06508
+b               = 54.0889
+/
+
+ Iteration 3
+ WSSR        : 141025            delta(WSSR)/WSSR   : -21.0798
+ delta(WSSR) : -2.97278e+06      limit for stopping : 1e-05
+ lambda	  : 0.0648113
+
+resultant parameter values
+
+a               = -1.00423
+b               = 1166.85
+/
+
+ Iteration 4
+ WSSR        : 1010.64           delta(WSSR)/WSSR   : -138.541
+ delta(WSSR) : -140015           limit for stopping : 1e-05
+ lambda	  : 0.00648113
+
+resultant parameter values
+
+a               = -3.70757
+b               = 1465.58
+/
+
+ Iteration 5
+ WSSR        : 1009.63           delta(WSSR)/WSSR   : -0.00099942
+ delta(WSSR) : -1.00904          limit for stopping : 1e-05
+ lambda	  : 0.000648113
+
+resultant parameter values
+
+a               = -3.71485
+b               = 1466.38
+/
+
+ Iteration 6
+ WSSR        : 1009.63           delta(WSSR)/WSSR   : -7.22457e-13
+ delta(WSSR) : -7.29415e-10      limit for stopping : 1e-05
+ lambda	  : 6.48113e-05
+
+resultant parameter values
+
+a               = -3.71485
+b               = 1466.38
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 1009.63
+rel. change during last iteration : -7.22457e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 18.3451
+variance of residuals (reduced chisquare) = WSSR/ndf   : 336.543
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.71485         +/- 0.1602       (4.313%)
+b               = 1466.38          +/- 14.68        (1.001%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.829  1.000 
+gnuplot> fit g(x) '/Users/burakkabakci/Desktop/aktivitaetmit.txt' via c,d
+
+
+ Iteration 0
+ WSSR        : 7.11249e+06       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 60.1825
+
+initial set of free parameter values
+
+c               = 1
+d               = 1
+/
+
+ Iteration 1
+ WSSR        : 3.30956e+06       delta(WSSR)/WSSR   : -1.14907
+ delta(WSSR) : -3.80293e+06      limit for stopping : 1e-05
+ lambda	  : 6.01825
+
+resultant parameter values
+
+c               = 6.90167
+d               = 1.97578
+/
+
+ Iteration 2
+ WSSR        : 2.77283e+06       delta(WSSR)/WSSR   : -0.19357
+ delta(WSSR) : -536736           limit for stopping : 1e-05
+ lambda	  : 0.601825
+
+resultant parameter values
+
+c               = 6.2531
+d               = 85.7832
+/
+
+ Iteration 3
+ WSSR        : 33796.1           delta(WSSR)/WSSR   : -81.0459
+ delta(WSSR) : -2.73903e+06      limit for stopping : 1e-05
+ lambda	  : 0.0601825
+
+resultant parameter values
+
+c               = -2.17537
+d               = 907.493
+/
+
+ Iteration 4
+ WSSR        : 7208.06           delta(WSSR)/WSSR   : -3.68865
+ delta(WSSR) : -26588            limit for stopping : 1e-05
+ lambda	  : 0.00601825
+
+resultant parameter values
+
+c               = -3.09063
+d               = 996.723
+/
+
+ Iteration 5
+ WSSR        : 7208.02           delta(WSSR)/WSSR   : -4.34966e-06
+ delta(WSSR) : -0.0313525        limit for stopping : 1e-05
+ lambda	  : 0.000601825
+
+resultant parameter values
+
+c               = -3.09163
+d               = 996.82
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 7208.02
+rel. change during last iteration : -4.34966e-06
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 24.5085
+variance of residuals (reduced chisquare) = WSSR/ndf   : 600.669
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+c               = -3.09163         +/- 0.1578       (5.103%)
+d               = 996.82           +/- 13.43        (1.347%)
+
+
+correlation matrix of the fit parameters:
+
+               c      d      
+c               1.000 
+d              -0.873  1.000 
+gnuplot> fit h(x) '/Users/burakkabakci/Desktop/differenz.txt' via e,f
+
+
+ Iteration 0
+ WSSR        : 277779            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 70.0036
+
+initial set of free parameter values
+
+e               = 1
+f               = 1
+/
+
+ Iteration 1
+ WSSR        : 221777            delta(WSSR)/WSSR   : -0.252513
+ delta(WSSR) : -56001.7          limit for stopping : 1e-05
+ lambda	  : 7.00036
+
+resultant parameter values
+
+e               = 2.37828
+f               = 1.10544
+/
+
+ Iteration 2
+ WSSR        : 210759            delta(WSSR)/WSSR   : -0.0522811
+ delta(WSSR) : -11018.7          limit for stopping : 1e-05
+ lambda	  : 0.700036
+
+resultant parameter values
+
+e               = 2.65527
+f               = 10.4755
+/
+
+ Iteration 3
+ WSSR        : 22797.9           delta(WSSR)/WSSR   : -8.24467
+ delta(WSSR) : -187961           limit for stopping : 1e-05
+ lambda	  : 0.0700036
+
+resultant parameter values
+
+e               = 0.455338
+f               = 318.57
+/
+
+ Iteration 4
+ WSSR        : 0.542217          delta(WSSR)/WSSR   : -42044.7
+ delta(WSSR) : -22797.3          limit for stopping : 1e-05
+ lambda	  : 0.00700036
+
+resultant parameter values
+
+e               = -0.617954
+f               = 468.824
+/
+
+ Iteration 5
+ WSSR        : 1.30213e-09       delta(WSSR)/WSSR   : -4.16406e+08
+ delta(WSSR) : -0.542217         limit for stopping : 1e-05
+ lambda	  : 0.000700036
+
+resultant parameter values
+
+e               = -0.623214
+f               = 469.56
+/
+
+ Iteration 6
+ WSSR        : 3.12522e-22       delta(WSSR)/WSSR   : -4.16653e+12
+ delta(WSSR) : -1.30213e-09      limit for stopping : 1e-05
+ lambda	  : 7.00036e-05
+
+resultant parameter values
+
+e               = -0.623214
+f               = 469.56
+/
+
+ Iteration 7
+ WSSR        : 0                 delta(WSSR)/WSSR   : 0
+ delta(WSSR) : -3.12522e-22      limit for stopping : 1e-05
+ lambda	  : 7.00036e-06
+
+resultant parameter values
+
+e               = -0.623214
+f               = 469.56
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -3.12522e-22
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+e               = -0.623214      
+f               = 469.56         
+gnuplot> plot '/Users/burakkabakci/Desktop/aktivitaetmit.txt' with points title 'Mit Gold Target', \
+>f(x) title 'Ausgleichsgerade', \
+>'/Users/burakkabakci/Desktop/aktivitaetohne.txt' with points title 'Ohne Target', \
+>g(x) title 'Ausgleichsgerade', \
+>h(x) title 'Differenz'
+gnuplot> 

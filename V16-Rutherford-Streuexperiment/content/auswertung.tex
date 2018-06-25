@@ -7,7 +7,7 @@
     \frac{4\pi(\SI{0,041}{\meter}+\SI{0,039}{\meter}+\SI{0.017}{\meter})^2}{3F}Z_{gemessen}
   \end{equation}
   ,weil davon ausgegangen wird, dass die Quelle homogen in alle Raumrichtungen strahlt.
-  Mit $Z_{gemessen}=\SI{13,5}{\bequerel}$ ergibt sich:
+  Mit $Z_{gemessen}=\SI{13,5}{\becquerel}$ ergibt sich:
   \begin{equation}
     Z_{Quelle} = \SI{274}{\kilo \becquerel} \; .
   \end{equation}
@@ -20,10 +20,101 @@
 
 
 \subsection{\texorpdfstring{Bestimmung der Foliendicke einer Goldfolie durch Energieverlustmessung der $\alpha$-Teilchen}{Bestimmung der Foliendicke einer Goldfolie durch Energieverlustmessung der alpha-Teilchen}}
+Zur Bestimmung der Foliendicke wurde eine Energieverlustmessung durchgeführt.
+Die Messwerte sind in Tabelle 2 und 3 aufgelistet. 
+\begin{table}[H] 
+	\centering
+	\begin{tabular}{c|c}
 
+		Druck  [mbar]& Pulshöhe [mV] \\ 
+		\hline 
+0,059	&1020 \\
+20	&960 \\
+30	&900\\
+40	&860\\
+50	&840\\
+60	&820\\
+70	&720\\
+80	&740\\
+90	&730\\
+100	&680\\
+110	&640\\
+120	&620\\
+130	&610\\
+140	&600\\	
+		
+	\end{tabular} 
+	\caption{Messwerte für die Energieverlustmessung mit Folie } 
+\end{table}  
 
+\begin{table}[H] 
+	\centering
+	\begin{tabular}{c|c}
 
+	Druck[mbar] & Pulshöhe  [V] \\ 
+		\hline 
+0,07	& 1480\\
+40	& 1300\\
+80	& 1160\\
+120	& 1040\\
+140	& 940\\
+	
+	\end{tabular} 
+	\caption{Messwerte für die Energieverlustmessung ohne Folie } 
+\end{table} 
 
+Die Werte für die Pulshöhe werden gegen den Druck aufgetragen. \\ Mittels linearer Regression ergibt sich folgender Graph:   
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm,height=8cm]{auswertung/v16_plot1.pdf}
+	\caption{Energieverlustmessung mit und ohne Goldfolie}
+	\label{img:grafik-dummy}
+\end{figure}
+\newpage 
+Aus der Ausgleichsrechnung ergeben sich für die Parameter m und b der Funktion $f(x)=m\cdot x+b$ für die Messung mit und ohne eingesetzter Folie folgende Werte: 
+\begin{align*}
+m_{ohne}= -3,71 \pm 0,1602 \; \frac{1}{\text{mbar}}
+\\
+m_{mit}= -3,09 \pm 0,1578 \; \frac{1}{\text{mbar}}
+\\
+\\
+b_{ohne}= 1466,4 \pm 14,68 \; \text{mV}
+\\
+b_{mit}= 996,82 \pm  13,43 \; \text{mV}
+\end{align*}
+Die Differenz dieser beiden Geraden entspricht dem Energieverlust durch die Folie. Durch die Subtraktion der Achsenabschnitte wird zunächst die Differenz der Impulshöhen bestimmt: 
+\begin{align}
+\Delta I= b_{ohne}-b_{mit}= 469,58 \pm 28,11 \; \text{mV}
+\end{align} 
+Aus dem Termschema in Abbildung 2 lässt sich für die Energie des $\alpha$-Teilchens der Wert E=5.486 MeV ablesen. Im Folgenden wird angenommen, dass das die Energie ist, die bei der Messung ohne Folie am Detektor detektiert wird. Unter dieser Annahme lässt sich der Energieverlust mit der Differenz der Impulshöhen (4) berechnen zu: 
+\begin{align*}
+\Delta E= 1,7568 \pm 0,10\;  \text{MeV}  
+\end{align*} 
+
+Mit dem Energieverlust lässt sich durch Umstellen der Bethe-Bloch-Gleichung (1) und Einsetzen der folgenden materialabhängigen Parameter die Dicke der Folie dx bestimmen.  
+Die Masse des $\alpha$-Teilchens lässt sich über $m=A \cdot u$ bestimmen. Dabei ist A die elementspezifische Massenzahl und u die atomare Masseneinheit. Für ein $\alpha$-Teilchen gilt A=4 sodass sich für die Masse folgender Wert ergibt: 
+
+\begin{align*}
+m_{\alpha}= 6.64 \cdot 10^{-27} \text{kg} 
+\end{align*} 
+damit lässt sich die Geschwindigkeit mit \begin{align*}
+v_{\alpha}= \sqrt{\frac{2\cdot E_{\alpha}}{m_{\alpha}}} 
+\end{align*} 
+bestimmen:
+\begin{align*}
+v_{\alpha}=16.27 \cdot 10^{6} \frac{\text{m}}{\text{s}}
+\end{align*} 
+
+Die Anzahl der Teilchen pro Volumeneinheit N lässt sich über \begin{align}
+N= \frac{\rho}{m} 
+\end{align} bestimmen. Für die Dichte des Targetmaterials $\rho$ wird 19320 $\frac{\text{kg}}{\text{m}^3}$ $[1]$ eingesetzt. Die Masse wird wieder mittels des Produktes aus Massenzahl und atomarer Masseneinheit bestimmt. \\ Daraus ergibt sich für die Masse von Gold (A=197 $[5]$): $m_{Gold}=1.31 \cdot 10^{-25}$ kg und damit folgende  Anzahl der Teilchen pro $\text{m}^3$: 
+ \begin{align*}
+ 5.91 \cdot 10^{28} \frac{1}{\text{m}^3}
+ \end{align*} 
+ Aus den berechneten Werten und der Ionisationsenergie von Gold $I=9.225 \frac{\text{eV}}{\text{atom}} \; [5]$ und den Ordnungzahlen Z$_{\alpha}$=2 und Z$_{Gold}$=79 ergibt sich folgender Wert:
+ \begin{align*}
+ dx= ( \pm ) \; \mu \text{m}
+ \end{align*}
 
 \subsection{Vermessung des Rutherford-Streugesetzes}
   Die gemessenen Z"ahlraten $Z(\theta)$ und zugeh"origen Streuwinkel $\theta$ so wie der jeweils nach Formel (\ref{querschnitt}) berechnete differentielle Wirkungsquerschnitt $\text{d}\sigma/\text{d}\Omega(\theta)$ sind in Tabelle (\ref{tab:ruther}) dargestellt.
@@ -86,3 +177,49 @@
 
 
   \subsection{Nachweis von Mehrfachstreuungen und und $Z$-Abh"angigkeit der Rutherford-Streuformel}
+
+
+
+Die Messwerte für die Folien aus verschiedenen Materialien sind in Tabelle 7 aufgelistet. Außerdem sind die zur Berechnung des Wirkungsquerschnittes benötigten Stoffeigenschaften ebenfalls in Tabelle 7 zu finden. 
+
+\begin{table}[H] 
+\centering
+\begin{tabular}{c|c c c c c c c}
+
+	Folienmaterial &Dichte $\rho [\frac{kg}{m^3}]$& Z & A & N [$\cdot 10^{28} \frac{1}{m^3}$]& Zeit t [s]& Zählrate n & n/t [s$^{-1}$]  \\ 
+	\hline 
+	Aluminium (3 $\mu$m) &2,7 $\cdot 10^{4}$& 13 & 27& 6,022 & 120  & 619 & 5,15  \\ 
+
+	Bismut (1 $\mu$m)& 9,78 $\cdot 10^{4}$  & 83 & 209& 2,818 & 120 & 705 & 5,87 \\ 
+
+	Gold (2 $\mu$m) & 1,93   $\cdot 10^{4}$ & 79 & 197 & 5.910 & 120 & 121 & 1,008 \\ 
+
+\end{tabular} 
+	\caption{Messwerte für Folien aus unterschiedlichem Material} 
+\end{table}
+ 
+ Die aus diesen Werten mittels der Formeln (2) und (7) berechneten Wirkungsquerschnitte sind in Tabelle 8 aufgelistet:
+ 
+ \begin{table}[H] 
+ 	\centering
+ 	\begin{tabular}{c|c c }
+ 		
+ 		Folienmaterial & $\frac{d\sigma}{d\Omega}_{Theorie}[ 10^{-24} \frac{1}{m}]$& $\frac{d\sigma}{d\Omega}_{Gemessen}[ 10^{-21} \frac{1}{m}]$ \\ 
+ 		\hline 
+ 		
+ 		Aluminium & 0.050 & 8.536 $\pm$ 5.413 \\ 
+ 		
+ 		Bismut & 2.056 & 3.567 $\pm$ 8.503   \\
+ 		
+ 		Gold & 1.863 & 8.215 $\pm$ 6.468 \\ 
+ 		
+ 	\end{tabular} 
+ 	\caption{Wirkungsquerschnitte für Folien aus verschiedenem Material} 
+ \end{table}
+Um die Z-Abhängigkeit zu untersuchen, wird in Abbildung 5 $\frac{n}{N\cdot dx}$ gegen die Ordnungszahl Z aufgetragen: 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm,height=8cm]{Z.pdf}
+	\caption{Z-Abhängigkeit}
+	\label{img:grafik-dummy}
+\end{figure}
