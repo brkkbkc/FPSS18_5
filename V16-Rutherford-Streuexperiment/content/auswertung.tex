@@ -87,13 +87,13 @@ Die Differenz dieser beiden Geraden entspricht dem Energieverlust durch die Foli
 \begin{align}
 b_{ohne}-b_{mit}= 469,58 \pm 28,11 \; \text{mV}
 \end{align} 
-Um aus der Differenz der Impulshöhen einen Energiedifferenz zu erhalten wird die Impulshöhe beim Druck $p=0$ bei der Messung ohne Goldfolie der ursprünglichen Energie $E_\alpha$ zu geordnet. 
+Um aus der Differenz der Impulshöhen einen Energiedifferenz zu erhalten wird die Impulshöhe beim Druck $p=0$ bei der Messung ohne Goldfolie der ursprünglichen Energie $E_\alpha$ zu geordnet. Daraus folgt für die Energie Differenz also die vorlorene Energie der $\alpha$-Teilchen beim Durchlauf der Folie:
 
 \begin{align*}
-\Delta E= 1,7568 \pm 0,10\;  \text{MeV}  
+ E= 1,7568 \pm 0,10\;  \text{MeV}  
 \end{align*} 
 
-Die Dicke der Folie $x$ wird mit dem Energieverlust und durch Umstellen der Bethe-Bloch-Gleichung (1) bestimmt. Dabei werden folgende materialabhängigen Parameter benutzt. Die Masse des $\alpha$-Teilchens lässt sich über $m=A \cdot u$ bestimmen. A ist die elementspezifische Massenzahl und u die atomare Masseneinheit. Für ein $\alpha$-Teilchen gilt A=4, sodass sich für die Masse folgender Wert ergibt: 
+Die Dicke der Folie $d$ wird mit dem Energieverlust und durch Umstellen der Bethe-Bloch-Gleichung (1) bestimmt. Dabei werden folgende materialabhängigen Parameter benutzt. Die Masse des $\alpha$-Teilchens lässt sich über $m=A \cdot u$ bestimmen. A ist die elementspezifische Massenzahl und u die atomare Masseneinheit. Für ein $\alpha$-Teilchen gilt A=4, sodass sich für die Masse folgender Wert ergibt: 
 
 \begin{align*}
 m_{\alpha}= 6.64 \cdot 10^{-27} \text{kg} 
@@ -110,13 +110,13 @@ v_{\alpha}=16.27 \cdot 10^{6} \frac{\text{m}}{\text{s}}
 Die Anzahl der Teilchen pro Volumeneinheit N lässt sich über \begin{align}
 N= \frac{\rho}{m_{Atom}} 
 \end{align} mit der Atommasse $m_{Atom}=A \cdot u$ bestimmen. 
-Für die Dichte des Targetmaterials $\rho$ wird 19320 $\frac{\text{kg}}{\text{m}^3}$ $[1]$ eingesetzt. Daraus ergibt sich für die Masse von Gold 
+Für die Dichte des Targetmaterials $\rho$ wird 19320 $\frac{\text{kg}}{\text{m}^3}$ $[1]$ eingesetzt. Daraus ergibt sich für $N$ von Gold 
  \begin{align*}
  N=5.91 \cdot 10^{28} \frac{1}{\text{m}^3}
  \end{align*} 
- Aus den berechneten Werten und der Ionisationsenergie von Gold $I=9.225 \frac{\text{eV}}{\text{atom}} \; [5]$ und den Ordnungzahlen z=2 und Z$_{Gold}$=79 ergibt sich folgender Wert:
+ Aus den berechneten Werten und der Ionisationsenergie von Gold $I=9.225 \frac{\text{eV}}{\text{atom}}$ und den Ordnungzahlen z=2 und Z$_{Gold}$=79 ergibt sich folgender Wert für die Dicke der Goldfolie $d$:
  \begin{align*}
- x= ( 0,94 \pm 0,05) \; \mu \text{m}
+ d= ( 0,94 \pm 0,05) \; \mu \text{m}
  \end{align*}
 
 \subsection{Vermessung des Rutherford-Streugesetzes}
@@ -183,13 +183,13 @@ Für die Dichte des Targetmaterials $\rho$ wird 19320 $\frac{\text{kg}}{\text{m}
 
 
 
-Die Messwerte für die Folien aus verschiedenen Materialien sind in Tabelle \ref{tab:werte} aufgelistet.
+Die Messwerte für Streuwinkel $\theta$-Abhängigkeit der Zählrate für die Folien aus verschiedenen Materialien sind in Tabelle \ref{tab:werte} aufgelistet.
 
 \begin{table}[H] 
 \centering
 \begin{tabular}{c|c c c c c c c}
 
-	Folienmaterial & Foliendicke & Z & N [$\cdot 10^{28} \frac{1}{m^3}$]& Zeit t [s]& Zählrate n & n/t [s$^{-1}$] & $log(\frac{I_\alpha}{Nx})$ \\ 
+	Folienmaterial & Foliendicke & Z & N [$\cdot 10^{28} \frac{1}{m^3}$]& Zeit t [s]& Counts & Zählrate [s$^{-1}$] & $log(\frac{I_\alpha}{Nx})$ \\ 
 	\hline 
 	Aluminium & 3 $\mu$m & 13 & 6,022 & 120  & 619 & 5,15 & -22,545 \\ 
 
@@ -210,8 +210,8 @@ Die Messwerte für die Folien aus verschiedenen Materialien sind in Tabelle \ref
 	\label{img:grafik-dummy}
 \end{figure}
 
-Um die Z-Abhängigkeit zu bestimmen wird der Logarithmus von $\frac{I_\alpha}{Nx}$ gegen den Logarithmus von Z aufgetragen und eine Ausgleichsfunktion die durch $f(x)=a\cdot x+b$ gegeben ist an die Messwerte angepasst. \\
-Aus der Ausgleichsrechnung ergeben sich für die Parameter a und b
+Um die Z-Abhängigkeit zu bestimmen wird der Logarithmus von $\frac{Z"ahlrate}{Nx}$ gegen den Logarithmus von Z aufgetragen und eine Ausgleichsfunktion die durch $f(x)=a\cdot x+b$ gegeben ist an die Messwerte angepasst. \\
+Aus der Ausgleichsrechnung ergeben sich für die Parameter a und b.
 
 \begin{align*}
 a= 0,25 \pm 1,51 
@@ -219,6 +219,6 @@ a= 0,25 \pm 1,51
 b= -22,84 \pm 2,54 
 \end{align*}
 
-a ist in dem Fall die Potenz der Z-Abhängigkeit. Das lässt drauf schließen, dass die Streuung von der Bethe-Bloch Formel beschrieben wird.
+a ist im logarithmischem Diagramm die Z-Abhängigkeit. Das lässt drauf schließen, dass die Mehrfachstreuung von der Bethe-Bloch Formel beschrieben wird, da a im Rahmen dies Fehlers die korrekte Potenz von 1 wie bei der Bethe-Bloch Formel haben kann. Die Rutherford Streuformel dagegen ist $\propto$ $Z^4$ hat. 
 
 
