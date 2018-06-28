@@ -539,12 +539,15 @@ Um die Funktionsweise des Operationsverstärkers als Umkehr-Integrator und Diffe
 Die jeweils verwendeten Bauteile sind den Tabellen zu entnehmen.
 %Beim Umkehr-Integrator und Differentiator wurden die selben Bauteile verwendet. Somit kam eine Kapazität mit $C$=1000 nF und ein Widerstand $R$=0,47 $\text{k}\Omega$ zum Einsatz.
 In den Tabellen 6 und 7 sind die Messwerte aufgeführt und in den Abbildungen \ref{int} und \ref{dif} graphisch dargestellt. Dazu wurden die Verhältnisse $\frac{U_\text{A}}{U_1}$ wie bei Teilaufgabe a) geplottet.
-Au"serdem wurden beim Umkehr-Differentiator die Korrelationen der Messwerte (bis zum jeweiligen Messwert in der Tabelle) berechnet, da hier , im Gegensatz zum Umkehr-Integrator, nicht im gesamten Messbereich ein mit der Theorie verträglicher Verlauf vorliegt.
-Wie zu erkennen ist, ist die Korrelation ab dem dreizehntem Messwertepaar, kleiner als 90\%, weshalb nur die vorherigen Werte f"ur die lineare Ausgleichsrechnung benutzt werden.
+
+Außerdem wurden beim Umkehr-Differentiator die Korrelationen der Messwerte (bis zum jeweiligen Messwert in der Tabelle) berechnet, da hier , im Gegensatz zum Umkehr-Integrator, nicht im gesamten Messbereich ein mit der Theorie verträglicher Verlauf vorliegt.
+Wie zu erkennen ist, ist die Korrelation ab dem dreizehntem Messwertepaar, kleiner als 90\%, weshalb nur die vorherigen Werte für die lineare Ausgleichsrechnung benutzt werden.
 \
 
+
+\iffalse
  \begin{minipage}{0.6\textwidth}
-\begin{tabular}{@{}lr@{}}
+\begin{tabular}{@{}l|r@{}}
  \multicolumn{2}{c}{Tabelle 6: Messwerte Umkehr- Integrator} \\
 
     \toprule
@@ -621,6 +624,92 @@ Wie zu erkennen ist, ist die Korrelation ab dem dreizehntem Messwertepaar, klein
      \bottomrule
 \end{tabular}
 \end{minipage}
+\fi
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{p{2cm}|p{2cm}}
+
+	$\frac{\nu}{\si{\kilo \hertz}}$ & $\frac{U_A}{\si{\volt}}$ \\
+
+\toprule
+0,1 & 23,9  \\
+0,25 & 19,1  \\
+0,5 & 10,1 \\
+0,75 & 7,0 \\
+1 & 4,8  \\
+1,25 & 4,1 \\
+1,5 & 3,5 \\
+1,75 & 2,9 \\
+2,0 & 2,7 \\
+2,25 & 2,21 \\
+2,75 & 1,85 \\
+3,0 & 1,69 \\
+3,25 & 1,57 \\
+3,5 & 1,49 \\
+3,75 & 1,37 \\
+4,0 & 1,29 \\
+4,25 & 1,25 \\
+4,5 & 1,17 \\
+4,75 & 1,13 \\
+5,0 & 1,01 \\
+5,25 & 0,94 \\
+5,5 & 0,90 \\
+5,75 & 0,86 \\
+6,0 & 0,84 \\
+%\midrule
+
+%\multicolumn{2}{c}{$\overline{n}$} & \multicolumn{2}{c} {1,56 $\pm$ 0,02} \\
+\bottomrule
+\end{tabular}
+\caption{Messwerte Integrator mit $C=\SI{22}{\nano \farad},R=\SI{0,47}{\kilo \ohm},U_1=\SI{420}{\milli \volt}$.}
+\label{tab:int}
+\end{table}
+
+
+\begin{table}
+\centering
+\begin{tabular}{p{2cm}|p{2cm}|c}
+
+$\frac{\nu}{\si{\kilo \hertz}}$ & $\frac{U_A}{\si{\volt}}$ & Korrelation \\
+
+\toprule
+1	& 1,25 & -\\
+2	& 2,17 & 1\\
+3	& 2,85 & 0,99\\
+    4	& 3,22  & 0,98\\
+    5	&  3,5 & 0,97\\
+    6	& 3,7 & 0,96\\
+    7	& 3,82 & 0.95\\
+    8	& 3,9 & 0,93\\
+9	& 3,98 & 0,92\\
+10	& 4,2 & 0,92\\
+    11	& 4,2 & 0,90\\
+    12	& 4,3 & 0,90\\
+    13	& 4,3 & 0,89\\
+    14	& 4,3 & 0,88\\
+    15	& 4,3 & 0,87\\
+    16	& 4,3 & 0,86\\
+    17	& 4,3 & 0,85\\
+    18	& 4,3 & 0,83\\
+    19	& 4,3 & 0,82\\
+    20	& 4,3 & 0,81\\
+    21	& 4,3 & 0,79\\
+    22	& 4,3 & 0,78\\
+    23	& 4,3 & 0,77\\
+    24	& 4,3 & 0,76\\
+    25	& 4,3 & 0,75\\
+%\midrule
+
+%\multicolumn{2}{c}{$\overline{n}$} & \multicolumn{2}{c} {1,56 $\pm$ 0,02} \\
+\bottomrule
+\end{tabular}
+\caption{Messwerte Differentiator mit $C=\SI{1000}{\nano \farad},R=\SI{0,47}{\kilo \ohm},U_1=\SI{420}{\milli \volt}$.}
+\label{tab:diff}
+\end{table}
+
 \newpage
 \noindent
 Die gefittetten Ergebnisse sind:
@@ -896,13 +985,17 @@ Das liegt auch daran, dass die Fehler der Bandbreiteprodukte besonders bei den e
 \newpage
 %Maximal ist die Abweichung mit 935,13 und 285,48 zwischen Frequenzgang 3 und 2.
 \item \textbf{4.4) Umkehrdifferentiator/-integrator:}
-Nach Formel (\ref{timbugtu}) ist im logarithmischen Diagramm ein linearer Verlauf der Ausgangspannung $U_A$ als Funktion der Speisefrequenz $\nu$ zu erwarten.
+Beim Umkehr-Differentiator ist nach Formel (\ref{timbugtu}) ist im logarithmischen Diagramm ein linearer Verlauf der Ausgangspannung $U_A$ als Funktion der Speisefrequenz $\nu$ zu erwarten.
 Die Steigung sollte dabei positiv sein.
 Wie in Abb. (\ref{dif}) zu erkennen, ist der erwartete Verlauf nur im Anfangsbereich der Messung gegeben.
-Nach den ersten 6 Messwerten kommt es zu einer Sättigung bei ca. $\SI{10.2}{\volt}$.
-Der Operationsverstärker sollte also nur im Anfangsbereich (bis ca.$\SI{10}{\volt}$) als Umkehr-Differentiator verwendet werden.
+Die berechnete Korrelation zeigt, dass ab dem dreizehntem Messwert, also ab einer Speisespannungsfrequenz von $\nu=\SI{13}{\hertz}$, eine Abweichung von über 10\% vorliegt, was als obere Grenze gewählt wurde.
+Das heißt der Umkehr Differentiator sollte nur für kleinere Frequenzen als linear Verstärker genutzt werden, weil es danach zu einer Sättigung kommt.
+Im Diagramm (\ref{dif}) wird die, nicht aus der Theorie zu erwartende, Sättigung der Ausgangspannung $U_A$ nach diesem Messwert besonders deutlich.
+%Nach den ersten 6 Messwerten kommt es zu einer Sättigung bei ca. $\SI{10.2}{\volt}$.
+%Der Operationsverstärker sollte also nur im Anfangsbereich (bis ca.$\SI{10}{\volt}$) als Umkehr-Differentiator verwendet werden.
 
 Beim Umkehr-Integrator hingegen ist über den gesamten Messbereich die aus der Theorie zu erwartende Proportionalität $U_A\propto \nu$ gegeben.
+
 Das Signal für die angelegte Dreieck-/Rechteck-/ und Sinusspannung hat bei beiden Schaltungen die erwartete Form (Ableitung/Stammfunktion).
 Das Bild der Rechteckspannung beim Umkehr-Integrator entspricht zwar zwei überlagerten Rechteckspannungen, die Delta-Peaks des Ausgangssignals sind dennoch deutlich sichtbar.
 %Wie in Abb. \ref{differentiator} zu sehen, ist die $1/\nu$ Proportionalität beim Umkehr-Integrator vorallem im Anfangsbereich ($\nu<\SI{500}{Hz}$) der Messung nicht gegeben.
