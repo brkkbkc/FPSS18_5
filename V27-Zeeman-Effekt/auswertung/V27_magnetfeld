@@ -1,0 +1,101 @@
+Last login: Thu Jul 26 18:41:10 on ttys000
+You have new mail.
+Buraks-MBP:~ burakkabakci$ gnuplot
+
+	G N U P L O T
+	Version 4.6 patchlevel 5    last modified February 2014
+	Build System: Darwin x86_64
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2014
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type set to 'aqua'
+gnuplot> set key top left
+gnuplot> set xlabel 'Stromstärke[A]'
+gnuplot> set ylabel 'Magnetische Flussdichte [mT]'
+gnuplot> 
+gnuplot> f(x)=a*x+b
+gnuplot> fit f(x) '/Users/burakkabakci/Desktop/V27_magnetfeld.txt' via a,b
+
+
+ Iteration 0
+ WSSR        : 4.43642e+06       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 8.39913
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+/
+
+ Iteration 1
+ WSSR        : 18890.6           delta(WSSR)/WSSR   : -233.848
+ delta(WSSR) : -4.41753e+06      limit for stopping : 1e-05
+ lambda	  : 0.839913
+
+resultant parameter values
+
+a               = 51.916
+b               = 5.72522
+/
+
+ Iteration 2
+ WSSR        : 8731.96           delta(WSSR)/WSSR   : -1.16338
+ delta(WSSR) : -10158.6          limit for stopping : 1e-05
+ lambda	  : 0.0839913
+
+resultant parameter values
+
+a               = 52.797
+b               = 25.8491
+/
+
+ Iteration 3
+ WSSR        : 8665.31           delta(WSSR)/WSSR   : -0.00769226
+ delta(WSSR) : -66.6558          limit for stopping : 1e-05
+ lambda	  : 0.00839913
+
+resultant parameter values
+
+a               = 52.4589
+b               = 30.5481
+/
+
+ Iteration 4
+ WSSR        : 8665.31           delta(WSSR)/WSSR   : -4.26464e-08
+ delta(WSSR) : -0.000369544      limit for stopping : 1e-05
+ lambda	  : 0.000839913
+
+resultant parameter values
+
+a               = 52.4581
+b               = 30.5592
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 8665.31
+rel. change during last iteration : -4.26464e-08
+
+degrees of freedom    (FIT_NDF)                        : 9
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 31.0292
+variance of residuals (reduced chisquare) = WSSR/ndf   : 962.812
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 52.4581          +/- 1.512        (2.883%)
+b               = 30.5592          +/- 17.9         (58.58%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.853  1.000 
+gnuplot> plot '/Users/burakkabakci/Desktop/V27_magnetfeld.txt' with points title 'Messwerte', \
+>f(x) title 'Ausgleichsgerade'
+gnuplot> 
