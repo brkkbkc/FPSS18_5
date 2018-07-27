@@ -1,18 +1,184 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
 
 
 
   \subsection{Eichung des Elektromagneten}
+  In Tabelle \ref{tab:mit} sind die eingestellten Stromstärken $I$ und die mit einer Hallsonde gemessenen zugehörigen Magnetfeldstärken $B$ aufgelistet.
+  
+  \begin{table}[H] 
+	\centering
+	\caption{Für die Eichung des Magneten aufgenommene Messwerte des Magnetfeldes neben der zugehörigen Stromstärke} 
+	\begin{tabular}{c|c}
+
+Strom I / A & Magnetische Flussdichte B \\ 
+\hline 
+1	& 60 \\
+2	& 123 \\
+4	& 236\\
+6	& 330\\
+8	& 460\\
+10	& 580\\
+12	& 700\\
+14	& 800\\
+16	& 890\\
+18	& 960\\
+20	& 1020\\	
+		
+	\end{tabular} 
+	  \label{tab:mit}
+\end{table} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm,height=8cm]{plot/V27_plot_1.pdf}
+	\caption{Magnetischer Flussdichte gegen Stromstärke aufgetragen}
+	\label{plot:1}
+\end{figure}
+
+Mit den Messwerten aus Tabelle \ref{tab:mit} wird eine Ausgleichsrechnung mittels der Funktion 
+\begin{align}
+f(x)= ax+b
+\end{align}
+
+durchgeführt. Für die Parameter erhält man durch den Fit:
+
+\begin{center}
+a = 52,4581 \pm 1,512 $\frac{mT}{A}$
+\\
+b = 30,5592 \pm 17,9 $mT$
+
+\end{center}    
+
+
 
   \subsection{\texorpdfstring{Aufl"oseverm"ogen $A$ und Dispersionsgebiet $\Delta \lambda$ der verwendeten Lummer-Gehrcke-Platte f"ur die Wellenl"angen des roten und blauen "Ubergangs}{Aufl"oseverm"ogen A und Dispersionsgebiet Delta lambda der verwendeten Lummer-Gehrcke-Platte f"ur die Wellenl"angen des roten und blauen "Ubergangs}}
+  
+  Zur Berechnung sind die wesentlichen Größen der Versuchsanleitung gegeben
+  
+  \begin{center}
+  L = 120 mm
+  d = 4 m
+  n(644nm) = 1,4567
+  n(480nm) = 1,4635
+  \end{center}
+  
+    \begin{table}[H] 
+	\centering
+	\caption{Für die Eichung des Magneten aufgenommene Messwerte des Magnetfeldes neben der zugehörigen Stromstärke} 
+	\begin{tabular}{c|c|c}
+
+  & rot & blau\\ 
+\hline 
+$\lambda$	 		& 643,8 nm & 480 nm \\
+$\Delta \lambda $	& 48,91 pm & 26,95 pm \\
+A				& 209129 & 285458 \\
+
+		
+	\end{tabular} 
+	  \label{tab:mit}
+\end{table} 
+  
+    \subsection{\texorpdfstring{Bestimmung des Lande-Faktors $g_{12}$ der $\sigma$-"Uberg"ange f"ur die rote Linie}{Bestimmung des Lande-Faktors g_{12} der sigma-"Uberg"ange f"ur die rote Linie}}
+  
+      \begin{table}[H] 
+	\centering
+	\caption{Für die Eichung des Magneten aufgenommene Messwerte des Magnetfeldes neben der zugehörigen Stromstärke} 
+	\begin{tabular}{c|c|c|c}
+
+  & $\Delta$ s in px & $\delta s$ in px & $\delta \lambda$ in $10^{-12} m$\\
+  \hline 
+1 &479&214&10,92 \pm 0,17 \\
+2 &339&148&10,68 \pm 0,24 \\
+3 &276&131&11,61 \pm0,29 \\
+4 &238&104&10,69 \pm0,34 \\
+5 &215&95&10,81 \pm 0,37 \\
+6 &198&75&9,26 \pm 0,40 \\
+7 &174&64&8,99 \pm 0,45 \\
+8 &157&60&9,35 \pm 0,50 \\
+
+		
+	\end{tabular} 
+	  \label{tab:mit}
+\end{table} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=16cm,height=12cm]{Fotos/V27_1.jpg}
+	\caption{Magnetischer Flussdichte gegen Stromstärke aufgetragen}
+	\label{plot:1}
+\end{figure}
+
+\begin{center}
+$\delta \lambda$ = (10,29 \pm 0,21) pm
+\end{center}
+
+  \subsection{\texorpdfstring{Bestimmung des Lande-Faktors $g_{12}$ der $\pi$-"Uberg"ange f"ur die blaue Linie}{Bestimmung des Lande-Faktors g_12 der pi-"Uberg"ange f"ur die blaue Linie}}
+  
+        \begin{table}[H] 
+	\centering
+	\caption{Für die Eichung des Magneten aufgenommene Messwerte des Magnetfeldes neben der zugehörigen Stromstärke} 
+	\begin{tabular}{c|c|c|c}
+
+  & $\Delta$ s in px & $\delta s$ in px & $\delta \lambda$ in $10^{-12} m$\\
+  \hline 
+1&188&92&6,59 \pm 0,24 \\
+2&176&84&6,43 \pm 0,25 \\
+3&160&72&6,06 \pm 0,28 \\
+4&147&63&5,77 \pm 0,30 \\
+5&131&58&5,97 \pm 0,34 \\
+6&122&52&5,74 \pm 0,36 \\
+
+		
+	\end{tabular} 
+	  \label{tab:mit}
+\end{table} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=16cm,height=12cm]{Fotos/V27_2.jpg}
+	\caption{Magnetischer Flussdichte gegen Stromstärke aufgetragen}
+	\label{plot:1}
+\end{figure}
+
+\begin{center}
+$\delta \lambda$ = (6,09 \pm 0,22) pm
+\end{center}
+
+  \subsection{\texorpdfstring{Bestimmung des Lande-Faktors $g_{12}$ der $\sigma$-"Uberg"ange f"ur die blaue Linie}{Bestimmung des Lande-Faktors g_{12} der sigma-"Uberg"ange f"ur die blaue Linie}}
+  
+          \begin{table}[H] 
+	\centering
+	\caption{Für die Eichung des Magneten aufgenommene Messwerte des Magnetfeldes neben der zugehörigen Stromstärke} 
+	\begin{tabular}{c|c|c|c}
+
+  & $\Delta$ s in px & $\delta s$ in px & $\delta \lambda$ in $10^{-12} m$\\
+  \hline 
+1&178&175&13,25 \pm 0,32 \\
+2&172&171&13,40 \pm 0,33\\
+3&160&165&13,90 \pm 0,36\\
+4&144&153&14,32 \pm 0,41\\
+5&124&142&15,43 \pm 0,50\\
+6&118&135&15,42 \pm 0,52\\
+7&111&127&15,42 \pm 0,55 \\
+
+		
+	\end{tabular} 
+	  \label{tab:mit}
+\end{table} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=16cm,height=12cm]{Fotos/V27_3.jpg}
+	\caption{Magnetischer Flussdichte gegen Stromstärke aufgetragen}
+	\label{plot:1}
+\end{figure}
+
+\begin{center}
+$\delta \lambda$ = (14,45 \pm 0,25) pm
+\end{center}
+
 
   \subsection{\texorpdfstring{Berechnung der experimentellen Lande-Faktoren $g_{ij}$ aus den Abst"anden $\Delta s$ und $\delta s$ der erhaltenen Aufnahmen}{Berechnung der experimentellen Lande-Faktoren g_{ij} aus den Abst"anden Delta s und delta s der erhaltenen Aufnahmen}}
 
@@ -37,15 +203,6 @@
 
 
 
-  \subsection{\texorpdfstring{Bestimmung des Lande-Faktors $g_{12}$ der $\sigma$-"Uberg"ange f"ur die rote Linie}{Bestimmung des Lande-Faktors g_{12} der sigma-"Uberg"ange f"ur die rote Linie}}
-
-  \subsection{\texorpdfstring{Bestimmung des Lande-Faktors $g_{12}$ der $\pi$-"Uberg"ange f"ur die blaue Linie}{Bestimmung des Lande-Faktors g_12 der pi-"Uberg"ange f"ur die blaue Linie}}
-
-  \subsection{\texorpdfstring{Bestimmung des Lande-Faktors $g_{12}$ der $\sigma$-"Uberg"ange f"ur die blaue Linie}{Bestimmung des Lande-Faktors g_{12} der sigma-"Uberg"ange f"ur die blaue Linie}}
-
-
-
-    MERKTEXT FUER DIESEN AUSWERTUNGSTEIL:Hier zwei verschiedene g12 f"ur die zwei  uebergaenge, deshlmb. die zwei aufgeteilten linien sind eigentlich 4, die 3/2 linie und die 2 linie ueberlagern sich nur, weil mit dieser apperatir nicht genau aufgeloest werden koennen.
 
 
 
@@ -61,13 +218,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-b
