@@ -186,15 +186,15 @@ Die zur Berechnung des Wirkungsquerschnittes benötigten Stoffeigenschaften sin
 
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c c c c}
+\begin{tabular}{c|c c c c c c}
 
-	Folienmaterial & Dichte $\rho$ $[10^3 \frac{kg}{m^3}]$ & Atommasse $A$ & N [$\cdot 10^{28} \frac{1}{m^3}$] \\
+	Folienmaterial & Foliendicke $[\mu m]$&Dichte $\rho$ $[\cdot 10^3 \frac{kg}{m^3}]$ & Z & Atommasse $A$ & N [$\cdot 10^{28} \frac{1}{m^3}$] \\
 	\hline
-	Aluminium \cite{3} & 2,70 & $26,981538 \cdot u$ & 6,026 \\
+	Aluminium \cite{3} & 3 & 2,70 & 13 & $26,981538 \cdot u$ & 6,026 \\
 
-	Bismut \cite{4} & 9,78 & $208,98038 \cdot u$ & 2,818 \\
+	Bismut \cite{4} & 1 & 9,78 & 83 & $208,98038 \cdot u$ & 2,818 \\
 
-	Gold \cite{5} & 19,32 & $196,966569 \cdot u$ & 5,907  \\
+	Gold \cite{5} & 2 & 19,32 & 79 & $196,966569 \cdot u$ & 5,907  \\
 
 \end{tabular}
 	\caption{Stoffeigenschaften wie die Dichte $\rho $ und die Atommasse $A$ und die daraus berechnete Anzahl der Teilchen pro Volumeneinheit N für Aluminium, Bismut und Gold }
@@ -204,18 +204,36 @@ Die Messwerte für Streuwinkel $\theta$-Abhängigkeit der Zählrate für die Fol
 
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c c c c c c}
+\begin{tabular}{c|c c c c c}
 
-	Folienmaterial & Foliendicke & Zeit t [s]& Counts & Zählrate [s$^{-1}$] & $log(\frac{I_\alpha}{Nx})$ \\
-	\hline
-	Aluminium & 3 $\mu$m & 120  & 619 & 5,15 & -22,545 \\
+	Folienmaterial & Zeit t [s]& Counts & Zählrate [s$^{-1}$] & $log(\frac{I_\alpha}{Nx})$ \\
+	\hline \\
+	$0^\circ$ \\
+	\hline \\
+	Aluminium & 120  & 1286 & 10,72 & -22,227 \\
 
-	Bismut &1 $\mu$m & 120 & 705 & 5,87 & -21,681\\
+	Bismut & 120 & 1134 & 9,45 & -21,474 \\
 
-	Gold & 2 $\mu$m & 120 & 121 & 1,008 & -23,069\\
+	Gold & 120 & 70 & 0,58 & -23,309\\
+	\hline \\
+	$3^\circ$ \\
+	\hline \\	
+	Aluminium & 120  & 1224 & 10,20 & -22,249 \\
+
+	Bismut & 120 & 1238 & 10,32 & -21,436\\
+
+	Gold & 120 & 116 & 0,97 & -23,086\\
+	\hline \\
+	$7^\circ$ \\
+	\hline \\
+	 Aluminium & 120  & 619 & 5,15 & -22,545 \\
+
+	Bismut & 120 & 705 & 5,87 & -21,681\\
+
+	Gold & 120 & 121 & 1,008 & -23,069\\
 
 \end{tabular}
-	\caption{Messwerte für Folien aus unterschiedlichem Material}
+	\caption{Messwerte wie die Zählrate, Counts und die Zeit für die Berechnung von $log(\frac{I_\alpha}{Nx})$ für Aluminium, Bismut und Gold}
 	\label{tab:werte}
 \end{table}
 
@@ -231,9 +249,17 @@ Um die Z-Abhängigkeit (Z ist hier die Kernladungszahl) zu bestimmen wird der Lo
 Aus der Ausgleichsrechnung ergeben sich für die Parameter a und b zu:
 
 \begin{align*}
-a= 0,25 \pm 1,51
+a_{0^\circ}= 0,16 \pm 2,00
 \\
-b= -22,84 \pm 2,54
+b_{0^\circ}= -22,07 \pm 3,38
+\\
+a_{3^\circ}= 0,03 \pm 1,80
+\\
+b_{3^\circ}= -22,30 \pm 3,03
+\\
+a_{7^\circ}= 0,25 \pm 1,51
+\\
+b_{7\circ}= -22,84 \pm 2,54
 \end{align*}
 
 a ist im logarithmischem Diagramm Potenz von Z . Das lässt drauf schließen, dass die Mehrfachstreuung durch die Bethe-Bloch Formel beschrieben wird, da a im Rahmen des Fehlers die korrekte Potenz von 1, wie bei der Bethe-Bloch Formel, haben kann. Die Rutherford Streuformel dagegen ist $\propto$ $Z^4$.
