@@ -20,7 +20,7 @@
 
 
 \subsection{\texorpdfstring{Bestimmung der Foliendicke einer Goldfolie durch Energieverlustmessung der $\alpha$-Teilchen}{Bestimmung der Foliendicke einer Goldfolie durch Energieverlustmessung der alpha-Teilchen}}
-Um die Foliendicke zu bestimmen wurde eine Energieverlustmessung durchgeführt. Die Messwerte sind in Tabelle \ref{tab:mit} und \ref{tab:ohne} aufgetragen.
+Um die Foliendicke zu bestimmen wurde eine Energieverlustmessung durchgeführt. Die Messwerte für die Messung mit der Goldfolie sind in Tabelle \ref{tab:mit} und die Messwerte für die Messung ohne der Goldfolie sind in der Tabelle \ref{tab:ohne} aufgetragen.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{c|c}
@@ -87,7 +87,7 @@ Die Differenz dieser beiden Geraden entspricht dem Energieverlust durch die Foli
 \begin{align}
 b_{ohne}-b_{mit}= 469,58 \pm 28,11 \; \text{mV}
 \end{align}
-Um aus der Differenz der Impulshöhen eine Energiedifferenz zu erhalten wird die Impulshöhe beim Druck $p=0$, bei der Messung ohne Goldfolie, der ursprünglichen Energie $E_\alpha$ zugeordnet. Daraus folgt für die Energie Differenz, also die vorlorene Energie der $\alpha$-Teilchen beim Durchlauf der Folie:
+Um aus der Differenz der Impulshöhen eine Energiedifferenz zu erhalten wird die Impulshöhe beim Druck $p=0$, bei der Messung ohne Goldfolie, der ursprünglichen Energie $E_\alpha$ zugeordnet. Daraus folgt für die Energie Differenz, also die verlorene Energie der $\alpha$-Teilchen beim Durchlauf der Folie:
 
 \begin{align*}
  E= 1,7568 \pm 0,10\;  \text{MeV}
@@ -96,7 +96,7 @@ Um aus der Differenz der Impulshöhen eine Energiedifferenz zu erhalten wird die
 Die Dicke der Folie $d$ wird mit dem Energieverlust und durch Umstellen der Bethe-Bloch-Gleichung (\ref{bethe}) bestimmt. Dabei werden folgende (materialabhängigen) Parameter benutzt: Die Masse des $\alpha$-Teilchens lässt sich über $m=A \cdot u$ bestimmen. A ist die elementspezifische Massenzahl und u die atomare Masseneinheit. Für ein $\alpha$-Teilchen gilt A=4, sodass sich für die Masse folgender Wert ergibt:
 
 \begin{align*}
-m_{\alpha}= 6.64 \cdot 10^{-27} \text{kg}
+m_{\alpha}= 6,64 \cdot 10^{-27} \text{kg}
 \end{align*}
 Die Geschwindigkeit lässt sich damit mit der Formel
 \begin{align*}
@@ -104,17 +104,18 @@ v_{\alpha}= \sqrt{\frac{2\cdot E_{\alpha}}{m_{\alpha}}}
 \end{align*}
 bestimmen:
 \begin{align*}
-v_{\alpha}=16.27 \cdot 10^{6} \frac{\text{m}}{\text{s}}
+v_{\alpha}=16,27 \cdot 10^{6} \frac{\text{m}}{\text{s}}
 \end{align*}
 
 Die Anzahl der Teilchen pro Volumeneinheit N lässt sich über \begin{align}
 N= \frac{\rho}{m_{Atom}}
+\label{form:voldichte}
 \end{align} mit der Atommasse $m_{Atom}=A \cdot u$ bestimmen.
 Für die Dichte des Targetmaterials $\rho$ wird 19320 $\frac{\text{kg}}{\text{m}^3}$ $[1]$ eingesetzt. Daraus ergibt sich für $N$ von Gold
  \begin{align*}
- N=5.91 \cdot 10^{28} \frac{1}{\text{m}^3}
+ N=5,91 \cdot 10^{28} \frac{1}{\text{m}^3}
  \end{align*}
- Aus den berechneten Werten und der Ionisationsenergie von Gold $I=9.225 \frac{\text{eV}}{\text{atom}}$ und den Ordnungzahlen z=2 und Z$_{Gold}$=79 ergibt sich folgender Wert für die Dicke der Goldfolie $d$:
+ Aus den berechneten Werten und der Ionisationsenergie von Gold $I=9,225 \frac{\text{eV}}{\text{atom}}$ und den Ordnungzahlen z=2 und Z$_{Gold}$=79 ergibt sich folgender Wert für die Dicke der Goldfolie $d$:
  \begin{align*}
  d= ( 0,94 \pm 0,05) \; \mu \text{m}
  \end{align*}
@@ -179,23 +180,39 @@ Für die Dichte des Targetmaterials $\rho$ wird 19320 $\frac{\text{kg}}{\text{m}
 
 
 
-  \subsection{Nachweis von Mehrfachstreuungen und und $Z$-Abh"angigkeit der Rutherford-Streuformel}
+  \subsection{Nachweis von $Z$-Abh"angigkeit der Rutherford-Streuformel}
 
+Die zur Berechnung des Wirkungsquerschnittes benötigten Stoffeigenschaften sind in Tabelle \ref{tab:voldichte} zu finden. Die Anzahl der Teilchen pro Volumeneinheit N wurde mittels Formel \ref{form:voldichte} berechnet.
 
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c c c c}
 
+	Folienmaterial & Dichte $\rho$ $[10^3 \frac{kg}{m^3}]$ & Atommasse $A$ & N [$\cdot 10^{28} \frac{1}{m^3}$] \\
+	\hline
+	Aluminium \cite{3} & 2,70 & $26,981538 \cdot u$ & 6,026 \\
+
+	Bismut \cite{4} & 9,78 & $208,98038 \cdot u$ & 2,818 \\
+
+	Gold \cite{5} & 19,32 & $196,966569 \cdot u$ & 5,907  \\
+
+\end{tabular}
+	\caption{Stoffeigenschaften wie die Dichte $\rho $ und die Atommasse $A$ und die daraus berechnete Anzahl der Teilchen pro Volumeneinheit N für Aluminium, Bismut und Gold }
+	\label{tab:voldichte}
+\end{table}
 Die Messwerte für Streuwinkel $\theta$-Abhängigkeit der Zählrate für die Folien aus verschiedenen Materialien sind in Tabelle \ref{tab:werte} aufgelistet.
 
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c c c c c c c}
+\begin{tabular}{c|c c c c c c}
 
-	Folienmaterial & Foliendicke & Z & N [$\cdot 10^{28} \frac{1}{m^3}$]& Zeit t [s]& Counts & Zählrate [s$^{-1}$] & $log(\frac{I_\alpha}{Nx})$ \\
+	Folienmaterial & Foliendicke & Zeit t [s]& Counts & Zählrate [s$^{-1}$] & $log(\frac{I_\alpha}{Nx})$ \\
 	\hline
-	Aluminium & 3 $\mu$m & 13 & 6,022 & 120  & 619 & 5,15 & -22,545 \\
+	Aluminium & 3 $\mu$m & 120  & 619 & 5,15 & -22,545 \\
 
-	Bismut &1 $\mu$m & 83 & 2,818 & 120 & 705 & 5,87 & -21,681\\
+	Bismut &1 $\mu$m & 120 & 705 & 5,87 & -21,681\\
 
-	Gold & 2 $\mu$m& 79 &  5.910 & 120 & 121 & 1,008 & -23,069\\
+	Gold & 2 $\mu$m & 120 & 121 & 1,008 & -23,069\\
 
 \end{tabular}
 	\caption{Messwerte für Folien aus unterschiedlichem Material}
