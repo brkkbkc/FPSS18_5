@@ -1,52 +1,65 @@
 \section{Zielsetzung}
-  In diesem Versuch soll zuerst die Foliendicke einer $\SI{2}{\micro\meter}$ dicken Goldfolie bestimmt werden, durch Verlustmessung der Energie von $\alpha$-Teilchen beim senkrechten Durchlauf der Folie, mit Hilfe der Bethe-Bloch-Formel.
+  In diesem Versuch soll zuerst die Foliendicke einer $\SI{2}{\micro\meter}$ dicken Goldfolie experimentell bestimmt werden.
+  Dies geschieht durch Verlustmessung der Energie von $\alpha$-Teilchen beim senkrechten Durchlauf der Folie, was durch die der Bethe-Bloch-Formel beshrieben ist.
 
-  Weiterhin wird die Abh"angigkeit des differentiellen Wirkungsquerschnittes $\text{d}\sigma/\text{d}\Omega(\theta)$ vom Streuwinkel $\theta$ bei der Streuung von $\alpha$-Strahlung an der Goldfolie vermessen, und mit dem Theorieverlauf nach der Rutherford-Streuformel verglichen.
+  Weiterhin wird die Abh"angigkeit des differentiellen Wirkungsquerschnittes $\text{d}\sigma/\text{d}\Omega(\theta)$ vom Streuwinkel $\theta$ bei der Streuung von $\alpha$-Strahlung an der Goldfolie vermessen und mit dem Theorieverlauf nach der Rutherford-Streuformel verglichen.
 
-  Zuletzt wird die die $Z$-Abh"angigkeit des differentiellen Wirkungsquerschnittes nach der Rutherford-Streuformel "uberpr"uft und die Entstehung von Mehrfachreflexionen der $\alpha$-Teilchen in dicken Folien nachgewiesen.
+  Zuletzt wird die die $Kernladungszahl/Z$-Abh"angigkeit des differentiellen Wirkungsquerschnittes nach der Rutherford-Streuformel "uberpr"uft.
+  % und die Entstehung von Mehrfachreflexionen der $\alpha$-Teilchen in dicken Folien nachgewiesen.
 
 \section{Theorie}
   \label{sec:Theorie}
-  Bei der Wechselwirkung von $\alpha$-Teilchen mit Materie kommt es "uberwiegend zu zwei Effekten:
+  Bei der Wechselwirkung von $\alpha$-Teilchen mit Materie m"ussen vorwiegend zwei Effekte ber"ucksichtigt werden:
   \begin{itemize}
-    \item 1) Energieverlust der $\alpha$-Teilchen durch Coulombwechselwirkung mit den Elektronen der Materialatome, beschrieben durch die Bethe-Bloch-Formel. Hierbei gibt es kaum eine Richtungs"anderung der Heliumkerne, da $m_{\alpha}>>m_e$.
-    \item 2) Inelastische (Energieverlust) Streuung (Richtungs"anderung) der $\alpha$-Teilchen an den Atomkernen, ebenfalls durch Coulombwechselwirkung, beschrieben durch die Rutherford-Streuformel.
+    \item 1) Energieverlust der $\alpha$-Teilchen druch inelastische St"o"se mit den Elektronen, beschrieben durch die Bethe-Bloch-Formel \cite{bethe}. Hierbei gibt es kaum eine Richtungs"anderung der Heliumkerne, da die deren Masse viel gr"o"ser ist, als die der Elektronen, d.\,h. $m_{\alpha}>>m_e$.
+    \item 2) Elastische Streuung der $\alpha$-Teilchen an den geladen Atomkernen.
+    Dieser Effekt wird durch die Rutherford-Streuformel beschrieben.
+    %Inelastische Streuung, das bedeutet Energieverlust verbunden mit einer Richtungs"anderung, der $\alpha$-Teilchen an den Atomkernen.
+    %Diesem Effekt liegt ebenfalls die Coulombwechselwirkung zugrunde und er wird durch die Rutherford-Streuformel beschrieben \cite{ruther}.
+    %Dieser ebenfalls hervorgerufen durch Coulombwechselwirkung beschrieben durch die Rutherford-Streuformel.
   \end{itemize}
 
 
-  \subsection{Bethe-Bloch-Formel}
-    Die Bethe-Bloch-Formel beschreibt den Energieverlust geladener Teilchen pro Strecke $\text{d}E/\text{d}x$ in einem Material, als Funktion der Teilchengeschwindigkeit $v$, der Teilchenladungszahl $z$ und als Funktion der Kernladungszahl $Z$ der Materialatome, der Teilchenzahl pro Volumen $N$ und der mittleren Ionisationsenergie $I$ der Materialelektronen.
-    Bei mehrkomponentigen Materialien kann mit effektiven $N$ und $Z$ gerechnet werden.
-    Die eigentliche Bethe-Bloch-Formel ist relativistisch, im nicht relativistischem Grenzfall ($\beta \approx 0$) ergibt sich:
+  \subsection{Die Bethe-Bloch-Formel}
+    Die Bethe-Bloch-Formel beschreibt den Energieverlust schwerer geladener Teilchen pro Strecke $\text{d}E/\text{d}x$ in einem Material, welcher durch die inelastischen Streuungen des Teilchens mit den Elektronen der Materialatome entsteht.
+    Es wird angenommmen, dass das Projektilteilchen durch die St"o"se im Material nicht von seiner bahn abgelenkt wird.
+     %als Funktion der Teilchengeschwindigkeit $v$, der Teilchenladungszahl $z$ und als Funktion der Kernladungszahl $Z$ der Materialatome, der Teilchenzahl pro Volumen $N$ und der mittleren Ionisationsenergie $I$ der Materialelektronen.
+    %Bei mehrkomponentigen Materialien kann mit effektiven $N$ und $Z$ gerechnet werden.
+    Die eigentliche Bethe-Bloch-Formel ist relativistisch, im nicht relativistischem Grenzfall ($v<<c$) ergibt sich:
     \begin{equation}
       \frac{-\text{d}E}{\text{d}x} = \frac{4\pi e^4z^2NZ}{m_ev^2(4\pi \epsilon_0)^2}\ln \left(\frac{2m_ev^2}{I}\right) \: .
     \end{equation}
+    In obiger Formel ist $z$ die Ladungszahl des Projektilteilchens und $v$ dessen Geschwindigkeit und $m_e$ ist die Ruhenergie des Elektrons.
+    Weitherhin ist $N$ die Teilchenzahl pro Volumen im Material, $Z$ die Kernladungszahl der Materialatome und $I$ das mittlere Ionisationspotential der Materialelektronen.
 
     In der N"aherung, dass $v=\sqrt{2E_{\alpha}/m}=v_{\alpha}$ konstant ist, mit $E_{\alpha}$ der urspr"unglichen Energie der Teilchen (hier $\alpha$-Teilchen), kann die Formel integriert werden und eine N"aherung des absoluten Energieverlustes $E$ nach der Strecke $x$ erhalten werden:
     \begin{equation}
       E = \frac{4\pi e^4z^2NZ}{m_ev^2(4\pi \epsilon_0)^2}\ln \left(\frac{2m_ev^2}{I}\right) \cdot x
       \label{bethe} \: .
     \end{equation}
+    Der Energieverlust $E$ ist somit linear abh"angig von der Strecke $x$.
 
 
 
   \subsection{Rutherford-Streuformel}
-    Die Rutherford-Streuformel beschreibt den differentiellen Wirkungsqerschnitt $\text{d}\sigma/\text{d}\Omega(\theta)$ (Wirkungsquerschnitt $\sigma$ pro Raumwinkel $\Omega$) als Funktion des Streuwinkels $\theta$ (im Gradma"s) und ist
+    Die Rutherford-Streuformel beschreibt den differentiellen Wirkungsqerschnitt $\text{d}\sigma/\text{d}\Omega(\theta)$ (Wirkungsquerschnitt $\sigma$ pro Raumwinkel $\Omega$) der elastischen Streuung von geladenen Projektilteilchen, als Funktion des Streuwinkels $\theta$ (im Gradma"s).
+    Das Targetteilchen wird dabei als ruhend angenommen und Spin-Kopplungen werden vernachl"assigt.
+    Die Rutherford-Streuformel ist gegeben durch
     \begin{equation}
       \frac{\text{d}\sigma}{\text{d}\Omega}(\theta) = \frac{1}{(4\pi \epsilon_0)^2} \left( \frac{zZe^2}{4E_{\alpha}} \right)^2 \frac{1}{\sin^4(\frac{\theta}{2})}
       \label{ruther}
     \end{equation}
-    mit der Kernladungszahl der Teilchen $z$ und der Materialatome $Z$ und der urspr"unglichen ($\alpha$-)Teilchenenergie $E_{\alpha}$ vor dem Wechselwirken mit Materie.
+    mit der Kernladungszahl der Projektilteilchen $z$ und der Materialatome $Z$, sowie der urspr"unglichen ($\alpha$-)Teilchenenergie $E_{\alpha}$ vor dem Wechselwirken mit Materie.
     Der differentielle Wirkungsquerschnitt ist dabei definiert als \cite{omega}:
     \begin{equation}
-      \frac{\text{d}\sigma}{\text{d}\Omega}(\theta) = \frac{Z_{out}(\theta)}{Z_{Folie}} \frac{1}{\Delta \Omega} \frac{1}{N_{A,Folie}}
+      \frac{\text{d}\sigma}{\text{d}\Omega}(\theta) = \frac{Z_{\text{out}}(\theta)}{Z_{\text{Folie}}} \frac{1}{\Delta \Omega} \frac{1}{N_{\text{A,Folie}}}
     \end{equation}
     Hierbei ist $Z_{out}(\theta)$ die beim Streuwinkel $\theta$ gemessene Teilchenz"ahlrate/Aktivit"at nach der Streuung an der Folie.
-    $N_{A,Folie}$ ist die Teilchenfl"achendichte des Materials/der Folie, das bedeutet
+    Die Gr"o"se $N_{A,Folie}$ ist die Teilchenfl"achendichte des Materials/der Folie, das bedeutet
     \begin{equation}
-      N_{A.Folie} = N_{Folie} \cdot d
+      N_{{A.Folie}} = N_{\text{Folie}} \cdot d
     \end{equation}
-    mit der Teilchenvolumendichte $N$ und der Dicke $d$ der Folie.
+    mit der Teilchenvolumendichte $N$ der Folie und der Dicke $d$ der Folie.
     $Z_{Folie}$ ist die Z"ahlrate/Aktivit"at der $\alpha$-Teilchen auf der Folie, welche sich aus der Versuchsgeometrie nach Abb. (\ref{fig:aufbau}) berechnet zu
     \begin{equation}
       Z_{Folie}=Z_{Quelle}\frac{F}{4\pi(\SI{0.039}{\meter}+\SI{0,017}{\meter})^2}
@@ -74,22 +87,3 @@
 
     Bei gemessenem $Z_{out}(\theta)$ k"onnen damit nun nun die $(y=\frac{\text{d}\sigma}{\text{d}\Omega})$-Werte zu den gemessenen $(x=\theta)$-Werten berechnet werden.
     %sodass an die im Diagramm afgetragenen ($\frac{\text{d}\sigma}{\text{d}\Omega},\theta$)-Punkte die Rutherford-Streuformel (\ref{ruther}) gefittet werden kann.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
